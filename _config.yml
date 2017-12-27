@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Yihong Wang"
+title                    : "Yihong Wang's Personal Website"
 title_separator          : "-"
 name                     : &name "Yihong Wang"
 description              : &description "personal description"
@@ -78,7 +78,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "汪一泓"
+  name             : "汪一泓 (Yihong Wang)"
   avatar           : "IMG_9763.JPG"
   bio              : "Ph.D. Candidate in Transport & Planning, Data Science Enthusiast, Music Generator"
   location         : "Delft University of Technology"
@@ -110,6 +110,7 @@ author:
   xing             :
   youtube          :
   wikipedia        :
+  kaggle           : "https://www.kaggle.com/yihongwang"
 
 
 # Reading Files
