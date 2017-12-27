@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: ""
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,51 +9,48 @@ redirect_from:
 
 {% include base_path %}
 
+Research interests
+======
+* Travel demand modeling
+* Transport system optimization
+* Machine learning
+
 Education
 ======
-* B.S. in Github, Github University, 2012
-* M.S. in Jekyll, Github University, 2014
-* Ph.D in Version Control Theory, Github University, 2018 (expected)
+* Ph.D in Transport & Planning, Delft University of Technology, 2015 - 2019 (expected)
+* M.S. in Transport & Planning, Delft University of Technology, 2013 - 2015
+* B.S. in Transportation, Shanghai Jiao Tong University, 2009 - 2013
 
-Work experience
+Awards
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* First prize at the Social Media HackBorne: What Makes Citizens in Borne Community Tick, 2017
+* "New idea" prize at the SODA + social credit (Shanghai Open Data Application in social credit), 2017
+* Top 35% at the KKBox's Music Recommendation Challenge, 2017
+* Transport Prize at the D4D Challenge, 2015
+* Third Prize at the China Undergraduate Contest of Logistic Planning, 2013
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
 Publications
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
+* Wang, Yihong, Gonçalo Homem de Almeida Correia, Erik de Romph, and H. J. P. Timmermans. "Using metro smart card data to model location choice of after-work activities: An application to Shanghai." Journal of Transport Geography 63 (2017): 40-47.
+
 Talks
 ======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
+* Using mobile internet usage behavior data to understand travel behavior, TRAIL Congress 2017.
+* Understanding multiday activity patterns based on mobile internet usage behavior, NetMob 2017.
+* Using public transport smart card data to model location choice of after-work activity: An application to Shanghai, TRAIL Congress 2016.
+* Use of mobile phone data for planning a road network: Application to the country of Senegal, EWGT 2015.
+* National and regional road network optimization for Senegal using mobile phone data, NetMob 2015.
+
+Skills
+======
+* R for data analysis
+  * data.table for data manipulation
+  * ggplot2 for data visualization
+  * Keras for deep learning
+* Swift for app development
   
 Teaching
 ======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+* Teaching assistant at the CIE4801 Transportation and Spatial Modeling (for master students), 2016 and 2017
+* Teaching assistant at the CTB1120-14 Inleiding Civiele Techniek (for bachelor students), 2016 and 2017
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
