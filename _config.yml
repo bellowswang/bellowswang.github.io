@@ -78,11 +78,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Yihong Wang"
-  avatar           : "IMG_9763.JPG"
-  bio              : "Ph.D. candidate in Transport & Planning"
-  location         : "The Netherlands"
-  employer         : "Delft University of Technology"
+  name             : ""
+  avatar           : "profile.png"
+  bio              : "Ph.D. Candidate in Transport & Planning, Data Science Enthusiast"
+  location         : "Delft University of Technology, The Netherlands"
+  employer         :
   googlescholar    : "https://scholar.google.nl/citations?user=NtLuILkAAAAJ&hl=en"
   email            : "Y.Wang-14@tudelft.nl"
   uri              :
@@ -97,7 +97,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "https://nl.linkedin.com/in/yihong-wang-28645847"
+  linkedin         : "yihong-wang-28645847"
   orcid            : "http://orcid.org/0000-0002-1582-7655"
   pinterest        :
   soundcloud       :

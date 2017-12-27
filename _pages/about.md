@@ -8,4 +8,4 @@ redirect_from:
   - /about.html
 ---
 
-![alt text]("/images/IMG_9763.JPG")
+![alt text](https://github.com/bellowswang/bellowswang.github.io/tree/master/images/IMG_9763.JPG)
