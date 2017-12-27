@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Traffic Flow + Money Flow + Rap Flow"
+title                    : "Traffic Flows\nMoney Flows\nRap Flows"
 title_separator          : "-"
 name                     : &name "Yihong Wang"
 description              : &description "personal description"
