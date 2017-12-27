@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Traffic Flows + Money Flows + Rap Flows"
+title                    : "Yihong Wang"
 title_separator          : "-"
 name                     : &name "Yihong Wang"
 description              : &description "personal description"
@@ -78,7 +78,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Yihong Wang"
+  name             : "汪一泓"
   avatar           : "IMG_9763.JPG"
   bio              : "Ph.D. Candidate in Transport & Planning, Data Science Enthusiast, Music Generator"
   location         : "Delft University of Technology"
