@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Once I update my blog, I will change a random cover picture."
+title: ""
 excerpt: ""
 author_profile: true
 redirect_from: 
@@ -9,3 +9,5 @@ redirect_from:
 ---
 
 ![alt text](https://github.com/bellowswang/bellowswang.github.io/raw/master/images/shanghaigrid.png)
+
+Once I update my blog, I will change a random cover picture.
