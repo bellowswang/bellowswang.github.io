@@ -109,6 +109,9 @@
       {% if author.kaggle %}
         <li><a href="{{ author.kaggle }}"><i class="fa fa-fw fa-chain" aria-hidden="true"></i> Kaggle</a></li>
       {% endif %}
+      {% if author.researchgate %}
+        <li><a href="{{ author.researchgate }}"><i class="fa fa-fw fa-chain" aria-hidden="true"></i> ResearchGate</a></li>
+      {% endif %}
       {% if author.wikipedia %}
         <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fa fa-fw fa-chain" aria-hidden="true"></i> Wikipedia</a></li>
       {% endif %}

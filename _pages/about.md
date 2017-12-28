@@ -8,6 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-![alt text](https://github.com/bellowswang/bellowswang.github.io/raw/master/images/shanghaigrid.png)
-
 Once I update my blog, I will change a random cover picture.
+
+![alt text](https://github.com/bellowswang/bellowswang.github.io/raw/master/images/shanghaigrid.png)
