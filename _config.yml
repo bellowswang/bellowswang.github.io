@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Yihong / TMR Flows"
+title                    : "TrafficMoneyRap Flow"
 title_separator          : "-"
 name                     : &name "Yihong Wang"
 description              : &description "personal description"
