@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Yihong Wang's Personal Website"
+title                    : "Yihong's Personal Website"
 title_separator          : "-"
 name                     : &name "Yihong Wang"
 description              : &description "personal description"
@@ -98,7 +98,7 @@ author:
   instagram        :
   lastfm           :
   linkedin         : "yihong-wang-28645847"
-  orcid            : "http://orcid.org/0000-0002-1582-7655"
+  orcid            : "https://orcid.org/0000-0002-1582-7655"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username

@@ -1,7 +1,7 @@
 ---
 permalink: /
-title: "Latest update"
-excerpt: "Latest update"
+title: ""
+excerpt: ""
 author_profile: true
 redirect_from: 
   - /about/
