@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Once I update my blog, I will change this random cover picture."
+title: "Once I update my blog, I will change a random cover picture."
 excerpt: ""
 author_profile: true
 redirect_from: 
