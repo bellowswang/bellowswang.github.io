@@ -16,10 +16,10 @@ Education
 * M.S. in Transport & Planning, TU Delft, 2015
 * B.S. in Transportation, Shanghai Jiao Tong University, 2013
 
-Publication
+Publications
 ======
 * Yihong Wang, Gonçalo Correia, Bart van Arem, Harry Timmermans. Understanding travellers' preferences for different types of trip destination based on mobile internet usage data. <i>Transportation Research Part C: Emerging Technologies</i> (in press).
-* Yihong Wang, Gonçalo Homem de Almeida Correia, Erik de Romph, Harry Timmermans. <a href="https://www.sciencedirect.com/science/article/pii/S0966692317300029">Using metro smart card data to model location choice of after-work activities: An application to Shanghai</a>. <i>Journal of Transport Geography</i> 63 (2017): 40-47.
+* Yihong Wang, Gonçalo Homem de Almeida Correia, Erik de Romph, Harry Timmermans. [Using metro smart card data to model location choice of after-work activities: An application to Shanghai](https://www.sciencedirect.com/science/article/pii/S0966692317300029). <i>Journal of Transport Geography</i> 63 (2017): 40-47.
 
 Awards
 ======
@@ -39,8 +39,8 @@ Presentations
 
 Activity and services
 ======
-* Reviewer of <a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5117645">IEEE Intelligent Transportation Systems Magazine</a>, <a href="https://www.journals.elsevier.com/applied-geography">Applied Geography</a> and <a href="http://www.2018iv.org/">IEEE Intelligent Vehicles Symposium</a>
-* Member of <a href="https://www.beijingcitylab.com/">Beijing City Lab</a>
+* Reviewer of [IEEE Intelligent Transportation Systems Magazine](http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5117645), [Applied Geography](https://www.journals.elsevier.com/applied-geography) and [IEEE Intelligent Vehicles Symposium](http://www.2018iv.org/)
+* Member of [Beijing City Lab](https://www.beijingcitylab.com/)
 
 Teaching
 ======
