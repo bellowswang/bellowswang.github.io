@@ -23,11 +23,11 @@ Publication
 
 Awards
 ======
-* [First prize at the Social Media HackBorne: What Makes Citizens in Borne Community Tick](https://www.borneboeit.nl/56366/nieuws/chinese-cheese-eaters-winnen-hackathon?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_details_shares%3BFqNbXrEyTmGFHw95wk5Evg%3D%3D), 2017.
-* ["New Idea" prize at the Shanghai Open Data Application in Social Credit](http://ptkj.shpt.gov.cn/html/xwdt/kjdt/963057831518.html), 2017.
-* [Top 3 at the leader board of Shanghai WO+ Open Data Contest](https://www.kaggle.com/c/kkbox-music-recommendation-challenge), 2016
-* [Transport Prize at the Data for Development in Senegal (D4D Senegal) Challenge](http://www.d4d.orange.com/en/presentation/endowment-and-panel/Folder/The-D4D-Challenge-is-a-great-success), 2015.
-* [Third Prize at the China Undergraduate Contest of Logistic Planning](http://special.univs.cn/service/anjibei/tdfc/2013/0312/955749.shtml), 2013.
+* First prize at [the Social Media HackBorne: What Makes Citizens in Borne Community Tick](https://www.borneboeit.nl/56366/nieuws/chinese-cheese-eaters-winnen-hackathon?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_details_shares%3BFqNbXrEyTmGFHw95wk5Evg%3D%3D), 2017.
+* "New Idea" prize at [the Shanghai Open Data Application in Social Credit](http://ptkj.shpt.gov.cn/html/xwdt/kjdt/963057831518.html), 2017.
+* Top 3 at [the leader board of Shanghai WO+ Open Data Contest](https://www.kaggle.com/c/kkbox-music-recommendation-challenge), 2016
+* Transport Prize at [the Data for Development in Senegal (D4D Senegal) Challenge](http://www.d4d.orange.com/en/presentation/endowment-and-panel/Folder/The-D4D-Challenge-is-a-great-success), 2015.
+* Third Prize at [the China Undergraduate Contest of Logistic Planning](http://special.univs.cn/service/anjibei/tdfc/2013/0312/955749.shtml), 2013.
 
 Presentations
 ======
