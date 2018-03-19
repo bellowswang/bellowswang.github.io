@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "坠入武侠世界的码农"
+title                    : "Yihong Wang"
 title_separator          : "-"
 name                     : &name "Yihong Wang"
 description              : &description "personal description"
@@ -78,10 +78,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "汪一泓 (Yihong Wang)"
-  avatar           : "yihongprofile2.png"
-  bio              : "Ph.D. Candidate in Transport & Planning, Data Science Enthusiast, Music Generator"
-  location         : "Delft University of Technology"
+  name             : "汪一泓"
+  avatar           : "yihongprofile3.jpeg"
+  bio              : "Ph.D. Candidate"
+  location         : "TU Delft"
   employer         :
   googlescholar    : "https://scholar.google.nl/citations?user=NtLuILkAAAAJ&hl=en"
   email            : "Y.Wang-14@tudelft.nl"
