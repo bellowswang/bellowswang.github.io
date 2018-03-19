@@ -8,10 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed statistical learning models to explain and predict spatial-temporal behavior of people, which can inform urban authorities or mobility companies to make better decisions. My research concerns the following specific topics:
-* Modeling location choice of flexible (non-work) activities
-* Relating travel behavior to mobile phone usage
-* Finding latent factors behind anonymous travelers
+I am working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed statistical learning models to explain and predict spatial-temporal behavior of people, which can inform urban authorities or mobility companies to make better decisions.
 
 Education
 ======
@@ -21,10 +18,31 @@ Education
 
 Publication
 ======
-*  Yihong Wang, Gonçalo Correia, Bart van Arem, Harry Timmermans. Understanding travellers' preferences for different types of trip destination based on mobile internet usage data. <i>Transportation Research Part C: Emerging Technologies</i> (in press).
-* Yihong Wang, Gonçalo Homem de Almeida Correia, Erik de Romph, and H. J. P. Timmermans. <a href="https://www.sciencedirect.com/science/article/pii/S0966692317300029">Using metro smart card data to model location choice of after-work activities: An application to Shanghai</a>. <i>Journal of Transport Geography</i> 63 (2017): 40-47.
+* Yihong Wang, Gonçalo Correia, Bart van Arem, Harry Timmermans. Understanding travellers' preferences for different types of trip destination based on mobile internet usage data. <i>Transportation Research Part C: Emerging Technologies</i> (in press).
+* Yihong Wang, Gonçalo Homem de Almeida Correia, Erik de Romph, Harry Timmermans. <a href="https://www.sciencedirect.com/science/article/pii/S0966692317300029">Using metro smart card data to model location choice of after-work activities: An application to Shanghai</a>. <i>Journal of Transport Geography</i> 63 (2017): 40-47.
+
+Awards
+======
+* [First prize at the Social Media HackBorne: What Makes Citizens in Borne Community Tick, 2017.](https://www.borneboeit.nl/56366/nieuws/chinese-cheese-eaters-winnen-hackathon?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_details_shares%3BFqNbXrEyTmGFHw95wk5Evg%3D%3D)
+* ["New Idea" prize at the Shanghai Open Data Application in Social Credit, 2017.](http://ptkj.shpt.gov.cn/html/xwdt/kjdt/963057831518.html)
+* [Top 3 at the leader board of Shanghai WO+ Open Data Contest, 2016](https://www.kaggle.com/c/kkbox-music-recommendation-challenge)
+* [Transport Prize at the Data for Development in Senegal (D4D Senegal) Challenge, 2015.](http://www.d4d.orange.com/en/presentation/endowment-and-panel/Folder/The-D4D-Challenge-is-a-great-success)
+* [Third Prize at the China Undergraduate Contest of Logistic Planning, 2013.](http://special.univs.cn/service/anjibei/tdfc/2013/0312/955749.shtml)
+
+Presentations
+======
+* "Using mobile internet usage behavior data to understand travel behavior." TRAIL Congress 2017.
+* "Understanding multiday activity patterns based on mobile internet usage behavior." NetMob 2017.
+* "Using public transport smart card data to model location choice of after-work activity: An application to Shanghai." TRAIL Congress 2016.
+* "Use of mobile phone data for planning a road network: Application to the country of Senegal." EWGT 2015.
+* "National and regional road network optimization for Senegal using mobile phone data." NetMob 2015.
 
 Activity and services
 ======
 * Reviewer of <a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5117645">IEEE Intelligent Transportation Systems Magazine</a>, <a href="https://www.journals.elsevier.com/applied-geography">Applied Geography</a> and <a href="http://www.2018iv.org/">IEEE Intelligent Vehicles Symposium</a>
 * Member of <a href="https://www.beijingcitylab.com/">Beijing City Lab</a>
+
+Teaching
+======
+* Teaching assistant at the CIE4801 Transportation and Spatial Modeling (for master students), 2016 and 2017.
+* Teaching assistant at the CTB1120-14 Inleiding Civiele Techniek (for bachelor students), 2016 and 2017.
