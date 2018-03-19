@@ -44,5 +44,5 @@ Activity and services
 
 Teaching
 ======
-* Teaching assistant at <i>Transportation and Spatial Modeling</i> (for master students), TU Delft, 2016 - 2017.
-* Teaching assistant at <i>CTB1120-14 Inleiding Civiele Techniek</i> (for bachelor students), TU Delft, 2016 - 2017.
+* Teaching assistant for <i>Transportation and Spatial Modeling</i> (for master students), TU Delft, 2016 - 2017.
+* Teaching assistant for <i>CTB1120-14 Inleiding Civiele Techniek</i> (for bachelor students), TU Delft, 2016 - 2017.
