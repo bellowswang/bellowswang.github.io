@@ -29,7 +29,7 @@ Awards
 * Transport Prize at [Data for Development in Senegal (D4D Senegal) Challenge](http://www.d4d.orange.com/en/presentation/endowment-and-panel/Folder/The-D4D-Challenge-is-a-great-success), 2015.
 * Third Prize at [China Undergraduate Contest of Logistic Planning](http://special.univs.cn/service/anjibei/tdfc/2013/0312/955749.shtml), 2013.
 
-Presentations
+Conference presentations
 ======
 * "Using mobile internet usage behavior data to understand travel behavior." [TRAIL Congress](http://rstrail.nl/new/phd-congress-2017/), 2017.
 * "Understanding multiday activity patterns based on mobile internet usage behavior." [NetMob](http://netmob.org/), 2017.
