@@ -31,11 +31,11 @@ Awards
 
 Presentations
 ======
-* "Using mobile internet usage behavior data to understand travel behavior." TRAIL Congress 2017.
-* "Understanding multiday activity patterns based on mobile internet usage behavior." [NetMob](http://netmob.org/) 2017.
-* "Using public transport smart card data to model location choice of after-work activity: An application to Shanghai." TRAIL Congress 2016.
-* "Use of mobile phone data for planning a road network: Application to the country of Senegal." [EWGT](http://www.ewgt.org/) 2015.
-* "National and regional road network optimization for Senegal using mobile phone data." [NetMob](http://netmob.org/) 2015.
+* "Using mobile internet usage behavior data to understand travel behavior." [TRAIL Congress](http://rstrail.nl/new/phd-congress-2017/), 2017.
+* "Understanding multiday activity patterns based on mobile internet usage behavior." [NetMob](http://netmob.org/), 2017.
+* "Using public transport smart card data to model location choice of after-work activity: An application to Shanghai." [TRAIL Congress](http://rstrail.nl/new/congress-2016/), 2016.
+* "Use of mobile phone data for planning a road network: Application to the country of Senegal." [EWGT](http://www.ewgt.org/), 2015.
+* "National and regional road network optimization for Senegal using mobile phone data." [NetMob](http://netmob.org/), 2015.
 
 Activity and services
 ======
