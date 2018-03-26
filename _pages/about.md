@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed statistical learning models to explain and predict spatial-temporal behavior of people, which can inform urban authorities or mobility companies to make better decisions.
+I am working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed models to explain and predict spatial-temporal behavior of people, which can inform urban authorities or mobility companies to make better decisions.
 
 Education
 ======
