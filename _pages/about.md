@@ -18,7 +18,7 @@ Education
 
 Publications
 ======
-* Yihong Wang, Gonçalo Correia, Bart van Arem, Harry Timmermans. Understanding travellers' preferences for different types of trip destination based on mobile internet usage data. <i>Transportation Research Part C: Emerging Technologies</i> 90 (2018): 247-259.
+* Yihong Wang, Gonçalo Correia, Bart van Arem, Harry Timmermans. [Understanding travellers' preferences for different types of trip destination based on mobile internet usage data](https://www.sciencedirect.com/science/article/pii/S0968090X18303346). <i>Transportation Research Part C: Emerging Technologies</i> 90 (2018): 247-259. ([Free access link for 50 days](https://authors.elsevier.com/a/1WmOs,M0mR9QDo))
 * Yihong Wang, Gonçalo Correia, Erik de Romph, Harry Timmermans. [Using metro smart card data to model location choice of after-work activities: An application to Shanghai](https://www.sciencedirect.com/science/article/pii/S0966692317300029). <i>Journal of Transport Geography</i> 63 (2017): 40-47.
 
 Awards
