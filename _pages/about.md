@@ -12,9 +12,9 @@ I am working on urban travel demand modeling using new big data sources, such as
 
 Education
 ======
-* Ph.D. in Transport & Planning, TU Delft, 2019 (expected)
-* M.S. in Transport & Planning, TU Delft, 2015
-* B.S. in Transportation, Shanghai Jiao Tong University, 2013
+* Ph.D. in Transport & Planning, TU Delft, 2019 (expected).
+* M.S. in Transport & Planning, TU Delft, 2015.
+* B.S. in Transportation, Shanghai Jiao Tong University, 2013.
 
 Publications
 ======
