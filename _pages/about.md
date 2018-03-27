@@ -39,8 +39,8 @@ Conference presentations
 
 Activity and services
 ======
-* Reviewer of [IEEE Intelligent Transportation Systems Magazine](http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5117645), [Applied Geography](https://www.journals.elsevier.com/applied-geography) and [IEEE Intelligent Vehicles Symposium](http://www.2018iv.org/)
-* Member of [Beijing City Lab](https://www.beijingcitylab.com/)
+* Reviewer of [IEEE Intelligent Transportation Systems Magazine](http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5117645), [Applied Geography](https://www.journals.elsevier.com/applied-geography) and [IEEE Intelligent Vehicles Symposium](http://www.2018iv.org/).
+* Member of [Beijing City Lab](https://www.beijingcitylab.com/).
 
 Teaching
 ======
