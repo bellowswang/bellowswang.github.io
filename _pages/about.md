@@ -25,11 +25,11 @@ Publications
 Honors and Awards
 ======
 * First prize winner in [Social Media HackBorne: What Makes Citizens in Borne Community Tick](https://www.borneboeit.nl/56366/nieuws/chinese-cheese-eaters-winnen-hackathon?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_details_shares%3BFqNbXrEyTmGFHw95wk5Evg%3D%3D), €750 prize, 2017.
-* Innovation prize winner in [Shanghai Open Data Application in Social Credit](http://www.sohu.com/a/211498958_796766), ¥5,000 prize, 2017.
+* Innovation Prize winner in [Shanghai Open Data Application in Social Credit](http://www.sohu.com/a/211498958_796766), ¥5,000 prize, 2017.
 * Top 3 winner on the leaderboard of [Shanghai WO+ Open Data Contest](https://www.kesci.com/apps/home/competition/56f37e6717f910f4347acf2e/leaderboard), 2016.
 * [TRAIL](http://rstrail.nl/new/home/home-2/) Ph.D. Scholarship, funded by [Netherlands Organization for Scientific Research (NWO)](https://www.nwo.nl/en), 2015
 * Transport Prize winner in [Data for Development in Senegal (D4D Senegal) Challenge](http://www.d4d.orange.com/en/presentation/endowment-and-panel/Folder/The-D4D-Challenge-is-a-great-success), $2,000 prize, 2015.
-* Third Prize winner in [China Undergraduate Contest of Logistic Planning](http://special.univs.cn/service/anjibei/tdfc/2013/0312/955749.shtml), 2013.
+* Third prize winner in [China Undergraduate Contest of Logistic Planning](http://special.univs.cn/service/anjibei/tdfc/2013/0312/955749.shtml), 2013.
 
 Conference presentations
 ======
@@ -44,7 +44,7 @@ Invited talks
 ======
 * "Using big data to inform travel demand models." [Beijing University of Technology](http://www.bjut.edu.cn/), 2018.
 * "Using big data to inform travel demand models." [Beijing Jiaotong University](http://en.njtu.edu.cn/), 2018.
-* "Social Network Crawler: A data-driven social network recommendation system for a public event." [Feiten, Feiten, Feiten: A congress about data and policies organized by Provincie Overijssel](http://www.overijssel.nl/over-overijssel/feiten-feiten-feiten/), 2018.
+* "Social Network Crawler: A data-driven social network recommendation system for a public event." [Feiten, Feiten, Feiten](http://www.overijssel.nl/over-overijssel/feiten-feiten-feiten/) (a congress about data and policies organized by Provincie Overijssel), 2018.
 
 Activity and services
 ======
@@ -53,5 +53,5 @@ Activity and services
 
 Teaching
 ======
-* Teaching assistant for <i>Transportation and Spatial Modeling</i> (for master students), TU Delft, 2016 - 2017.
+* Teaching assistant for <i>[Transportation and Spatial Modeling](https://ocw.tudelft.nl/courses/transportation-and-spatial-modelling/)</i> (for master students), TU Delft, 2016 - 2017.
 * Teaching assistant for <i>Inleiding Civiele Techniek</i> (for bachelor students), TU Delft, 2016 - 2017.
