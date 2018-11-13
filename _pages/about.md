@@ -53,5 +53,5 @@ Activity and services
 
 Teaching
 ======
-* Teaching assistant for <i>[Transportation and Spatial Modeling](https://ocw.tudelft.nl/courses/transportation-and-spatial-modelling/)</i> (for master students), TU Delft, 2016 - 2017.
-* Teaching assistant for <i>Inleiding Civiele Techniek</i> (for bachelor students), TU Delft, 2016 - 2017.
+* Teaching assistant for [Transportation and Spatial Modeling](https://ocw.tudelft.nl/courses/transportation-and-spatial-modelling/) (for master students), TU Delft, 2016 - 2017.
+* Teaching assistant for [Inleiding Civiele Techniek](https://ocw.tudelft.nl/courses/inleiding-civiele-techniek/) (for bachelor students), TU Delft, 2016 - 2017.
