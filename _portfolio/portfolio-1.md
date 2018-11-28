@@ -4,9 +4,9 @@ excerpt: "Given a traveler's favorite mobile internet content type, can we make 
 collection: portfolio
 ---
 
-New mobility data sources like mobile phone traces have been shown to reveal individuals’ movements in space and time. However, socioeconomic attributes of travellers are missing in those data. Consequently, it is not possible to partition the population and have an in-depth understanding of the socio-demographic factors influencing travel behaviour. To fill this gap, we use mobile internet usage behaviour, including one’s preferred type of website and application (app) visited through mobile internet as well as the level of usage frequency, as a distinguishing element between different population segments.
+New mobility data sources like mobile phone traces have been shown to reveal individuals’ movements in space and time. However, socioeconomic attributes of travellers are missing in those data. Consequently, it is not possible to partition the population and have an in-depth understanding of the socio-demographic factors influencing travel behaviour. To fill this gap, we proposed to use mobile internet usage behaviour, including one’s preferred type of website and application (app) visited through mobile internet as well as the level of usage frequency, as a distinguishing element between different population segments.
 
-The method consists of two parts:
+The method consists of three parts:
 * Using the point of interest (POI) data to cluster grid cells of a city according to the main function of a grid cell, serving as a reference to determine the type of trip destination,
 * Distinguishing population segments based on mobile internet usage, and
 * Comparing the travel behaviour of each segment in terms of the preference for types of trip destinations. 
