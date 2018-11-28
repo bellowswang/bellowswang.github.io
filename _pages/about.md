@@ -10,13 +10,13 @@ redirect_from:
 
 I have been working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed models to estimate, explain and predict spatial-temporal behavior of people, which can inform urban authorities, mobility companies, retail companies, etc., to make better decisions.
 
-In this website, you can (1) find my CV below, (2) find the summary of my research in the portfolio section, and (3) read my blog mainly about the experience in data science competitions as well as various side projects.
+In this website, you can (1) find my CV below, (2) find the summary of my research in the portfolio section, and (3) read my blog about the experience in data science competitions as well as various side projects.
 
 Education
 ======
 * Ph.D. in Transport & Planning, TU Delft, 2015 - 2019 (expected).
-	* Topic: Using big data to inform travel demand models
-	* Supervisors: Gonçalo Correia, Bart van Arem and Harry Timmermans
+	* Topic: Using big data to inform travel demand models.
+	* Supervisors: Gonçalo Correia, Bart van Arem, and Harry Timmermans.
 * M.S. in Transport & Planning, TU Delft, 2013 - 2015.
 * B.S. in Transportation, Shanghai Jiao Tong University, 2009 - 2013.
 
