@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed models to estimate, explain and predict spatial-temporal behavior of people, which can inform urban authorities, mobility companies, retail companies, etc., to make better decisions.
+I have been working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed models to estimate, explain and predict spatial-temporal behavior of people, which can inform urban authorities, mobility companies, retail companies, etc., to make better decisions.
 
 In this website, you can (1) find my CV below, (2) find the summary of my research in the portfolio section, and (3) read my blog mainly about the experience in data science competitions as well as various side projects.
 
@@ -28,7 +28,7 @@ Honors and Awards
 ======
 * First prize winner in [Social Media HackBorne: What Makes Citizens in Borne Community Tick](https://www.borneboeit.nl/56366/nieuws/chinese-cheese-eaters-winnen-hackathon?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_details_shares%3BFqNbXrEyTmGFHw95wk5Evg%3D%3D), €750 prize, 2017.
 * Innovation Prize winner in [Shanghai Open Data Application in Social Credit](http://www.sohu.com/a/211498958_796766), ¥5,000 prize, 2017.
-* Top 3 winner on the leaderboard of [Shanghai WO+ Open Data Contest](https://www.kesci.com/apps/home/competition/56f37e6717f910f4347acf2e/leaderboard), 2016.
+* Third place winner on the leaderboard of [Shanghai WO+ Open Data Contest](https://www.kesci.com/apps/home/competition/56f37e6717f910f4347acf2e/leaderboard), 2016.
 * [TRAIL](http://rstrail.nl/new/home/home-2/) Ph.D. Scholarship, funded by [Netherlands Organization for Scientific Research (NWO)](https://www.nwo.nl/en), 2015
 * Transport Prize winner in [Data for Development in Senegal (D4D Senegal) Challenge](http://www.d4d.orange.com/en/presentation/endowment-and-panel/Folder/The-D4D-Challenge-is-a-great-success), $2,000 prize, 2015.
 * Third prize winner in [China Undergraduate Contest of Logistic Planning](http://special.univs.cn/service/anjibei/tdfc/2013/0312/955749.shtml), 2013.

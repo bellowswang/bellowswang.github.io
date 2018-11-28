@@ -4,9 +4,12 @@ excerpt: "Given a traveler's favorite mobile internet content type, can we make 
 collection: portfolio
 ---
 
-New mobility data sources like mobile phone traces have been shown to reveal individuals’ movements in space and time. However, socioeconomic attributes of travellers are missing in those data. Consequently, it is not possible to partition the population and have an in-depth understanding of the socio-demographic factors influencing travel behaviour.
+New mobility data sources like mobile phone traces have been shown to reveal individuals’ movements in space and time. However, socioeconomic attributes of travellers are missing in those data. Consequently, it is not possible to partition the population and have an in-depth understanding of the socio-demographic factors influencing travel behaviour. To fill this gap, we use mobile internet usage behaviour, including one’s preferred type of website and application (app) visited through mobile internet as well as the level of usage frequency, as a distinguishing element between different population segments.
 
-Aiming at filling this gap, we use mobile internet usage behaviour, including one’s preferred type of website and application (app) visited through mobile internet as well as the level of usage frequency, as a distinguishing element between different population segments. We compare the travel behaviour of each segment in terms of the preference for types of trip destinations. The point of interest (POI) data are used to cluster grid cells of a city according to the main function of a grid cell, serving as a reference to determine the type of trip destination.
+The method consists of two parts:
+* Using the point of interest (POI) data to cluster grid cells of a city according to the main function of a grid cell, serving as a reference to determine the type of trip destination,
+* Distinguishing population segments based on mobile internet usage, and
+* Comparing the travel behaviour of each segment in terms of the preference for types of trip destinations. 
 
 The method was tested for the city of Shanghai, China, by using a special mobile phone dataset that includes not only the spatial-temporal traces but also the mobile internet usage behaviour of the same users. We identified statistically significant relationships between a traveller’s favourite category of mobile internet content and more frequent types of trip destinations that he/she visits. For example, compared to others, people whose favourite type of app/website is in the “tourism” category significantly preferred to visit touristy areas. Moreover, users with different levels of internet usage intensity show different preferences for types of destinations as well. We found that people who used mobile internet more intensively were more likely to visit more commercial areas, and people who used it less preferred to have activities in predominantly residential areas.
 
