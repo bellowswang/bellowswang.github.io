@@ -1,13 +1,16 @@
 ---
-title: "Road network design in a developing country using mobile phone data"
-excerpt: "Is there any correlation between telecommunication and travel demand between two cities? This study uses mobile phone traces to depict mobility patterns in a country with limited travel survey data, and relate inter-region travel demand with inter-region telecommunication intensity. Based on that, a trip distribution model was developed and embedded in a road network optimization algorithm. The method was applied to the case study country of Senegal for road network design. It is valuable and reproducible not only to Senegal but also to other countries where traditional mobility data is scarce but mobile phone data is available. [[<u>download link</u>](https://ieeexplore.ieee.org/document/8531737)]<br/><br/><img src='/images/rnd.png' width='400'/>"
+title: "Understanding travellers’ spatial preferences based on mobile internet usage data"
+excerpt: "Given a traveler's favorite mobile internet content type, can we make a better guess on which type of places this traveler would visit? In this study, we used a special mobile phone dataset that includes not only the spatial-temporal traces but also the mobile internet usage behavior of the same users to identify the statistical relationships between one's spatial preferences and mobile internet usage. [[<u>download link</u>](https://www.sciencedirect.com/science/article/pii/S0968090X18303346)]<br/><br/><img src='/images/mobileinternet.png' width='400'/>"
 collection: portfolio
 ---
 
-The method consists of three parts:
-* filtering mobile phone traces to derive mobility patterns,
-* building an adapted formulation of the gravity-based trip distribution model, which considers telecommunication intensity (i.e., aggregate number of calls and text messages) and travel time as input to forecast the influence of road improvements on country-wide mobility, and
-* optimizing the road network investment based on the adapted trip distribution model by using a local search algorithm.
-The method was applied to the case study country of Senegal. The mobile phone data was transformed to support informed decisions on road network development in that country given different objectives, namely accessibility and equity.
+New mobility data sources like mobile phone traces have been shown to reveal individuals’ movements in space and time. However, socioeconomic attributes of travellers are missing in those data. Consequently, it is not possible to partition the population and have an in-depth understanding of the socio-demographic factors influencing travel behaviour. To fill this gap, we use mobile internet usage behaviour, including one’s preferred type of website and application (app) visited through mobile internet as well as the level of usage frequency, as a distinguishing element between different population segments.
 
-This work was awarded the Transport Prize in the Data for Development (D4D) Challenge in 2015, and the corresponding academic paper was published in [IEEE ITS Magazine](https://ieeexplore.ieee.org/document/8531737) in 2018.
+The method consists of two parts:
+* Using the point of interest (POI) data to cluster grid cells of a city according to the main function of a grid cell, serving as a reference to determine the type of trip destination,
+* Distinguishing population segments based on mobile internet usage, and
+* Comparing the travel behaviour of each segment in terms of the preference for types of trip destinations. 
+
+The method was tested for the city of Shanghai, China, by using a special mobile phone dataset that includes not only the spatial-temporal traces but also the mobile internet usage behaviour of the same users. We identified statistically significant relationships between a traveller’s favourite category of mobile internet content and more frequent types of trip destinations that he/she visits. For example, compared to others, people whose favourite type of app/website is in the “tourism” category significantly preferred to visit touristy areas. Moreover, users with different levels of internet usage intensity show different preferences for types of destinations as well. We found that people who used mobile internet more intensively were more likely to visit more commercial areas, and people who used it less preferred to have activities in predominantly residential areas.
+
+The paper was published in [Transportation Research Part C: Emerging Technologies](https://www.sciencedirect.com/science/article/pii/S0968090X18303346) in 2018.
