@@ -10,7 +10,7 @@ redirect_from:
 
 I have been working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed models to estimate, explain and predict spatial-temporal behavior of people, which can inform urban authorities, mobility companies, retail companies, etc., to make better decisions.
 
-In this website, you can (1) find my CV below, (2) find the summary of my research in the portfolio section, and (3) read my blog about the experience in data science competitions as well as various side projects.
+In this website, you can (1) find my CV below, (2) find the summary of my research in the portfolio section, and (3) read my blog about the experience in data science competitions as well as other side projects.
 
 Education
 ======
