@@ -1,7 +1,7 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Road Network Design in a Developing Country Using Mobile Phone Data: An Application to Senegal"
+excerpt: "A telecommunication-based trip distribution model embedded in a road network optimization algorithm. <br/><br/><img src='/images/rnd.png'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+This study uses mobile phone data to understand mobility patterns in a country, with limited mobility data, in order to give advice about decisions on how to design the national and regional road network. Our method consists of three parts: (1) filtering mobile phone traces to derive mobility patterns, (2) building an adapted formulation of the gravity-based trip distribution model, which considers telecommunication intensity (i.e., aggregate number of calls and text messages) and travel time as input to forecast the influence of road improvements on country-wide mobility, and (3) optimizing the road network investment based on the adapted trip distribution model by using a local search algorithm. The method was applied to the case study country of Senegal. The mobile phone data was transformed to support informed decisions on road network development in that country given different objectives, namely accessibility and equity. We believe that the methodology is valuable and reproducible to other countries where traditional mobility data is scarce but mobile phone data is available to transport planners.
