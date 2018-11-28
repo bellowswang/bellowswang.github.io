@@ -1,6 +1,6 @@
 ---
 title: "Understanding travellers’ spatial preferences based on mobile internet usage data"
-excerpt: "Given a traveler's favorite mobile internet content type, can we make a better guess on which type of places this traveler would visit? In this study, we used a special mobile phone dataset that includes not only the spatial-temporal traces but also the mobile internet usage behavior of the same users to identify the statistical relationships between one's spatial preferences and mobile internet usage. [[link](https://www.sciencedirect.com/science/article/pii/S0968090X18303346)]<br/><br/><img src='/images/mobileinternet.png' width='400'/>"
+excerpt: "Given a traveler's favorite mobile internet content type, can we make a better guess on which type of places this traveler would visit? In this study, we used a special mobile phone dataset that includes not only the spatial-temporal traces but also the mobile internet usage behavior of the same users to identify the statistical relationships between one's spatial preferences and mobile internet usage. [[<u>link</u>](https://www.sciencedirect.com/science/article/pii/S0968090X18303346)]<br/><br/><img src='/images/mobileinternet.png' width='400'/>"
 collection: portfolio
 ---
 
