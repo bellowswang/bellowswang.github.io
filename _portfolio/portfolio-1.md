@@ -5,9 +5,9 @@ collection: portfolio
 ---
 
 The method consists of three parts:
-(1) filtering mobile phone traces to derive mobility patterns,
-(2) building an adapted formulation of the gravity-based trip distribution model, which considers telecommunication intensity (i.e., aggregate number of calls and text messages) and travel time as input to forecast the influence of road improvements on country-wide mobility, and
-(3) optimizing the road network investment based on the adapted trip distribution model by using a local search algorithm.
+* filtering mobile phone traces to derive mobility patterns,
+* building an adapted formulation of the gravity-based trip distribution model, which considers telecommunication intensity (i.e., aggregate number of calls and text messages) and travel time as input to forecast the influence of road improvements on country-wide mobility, and
+* optimizing the road network investment based on the adapted trip distribution model by using a local search algorithm.
 The method was applied to the case study country of Senegal. The mobile phone data was transformed to support informed decisions on road network development in that country given different objectives, namely accessibility and equity.
 
-This work was awarded the Transport Prize in the Data for Development (D4D) Challenge in 2015, and the academic paper was published in [IEEE ITS Magazine](https://ieeexplore.ieee.org/document/8531737).
+This work was awarded the Transport Prize in the Data for Development (D4D) Challenge in 2015, and the corresponding academic paper was published in [IEEE ITS Magazine](https://ieeexplore.ieee.org/document/8531737).
