@@ -1,6 +1,6 @@
 ---
 title: "Road network design in a developing country using mobile phone data"
-excerpt: "This study uses mobile phone data to understand mobility patterns in a country, with limited mobility data, in order to give advice about decisions on how to design the national and regional road network. We mainly developed a telecommunication-based trip distribution model embedded in a road network optimization algorithm, which was applied to the case study country of Senegal. We believe that the methodology is valuable and reproducible to other countries where traditional mobility data is scarce but mobile phone data is available to transport planners.<br/><br/><img src='/images/rnd.png'/>"
+excerpt: "This study uses mobile phone data to understand mobility patterns in a country, with limited mobility data, in order to give advice about decisions on how to design the national and regional road network. We mainly developed a telecommunication-based trip distribution model embedded in a road network optimization algorithm, which was applied to the case study country of Senegal. We believe that the methodology is valuable and reproducible to other countries where traditional mobility data is scarce but mobile phone data is available to transport planners.<br/><img src='/images/rnd.png' width="150"/>"
 collection: portfolio
 ---
 
