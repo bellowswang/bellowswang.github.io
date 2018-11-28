@@ -10,6 +10,8 @@ redirect_from:
 
 I am working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed models to estimate, explain and predict spatial-temporal behavior of people, which can inform urban authorities, mobility companies, retail companies, etc., to make better decisions.
 
+In this website, you can (1) find my CV below, (2) find the summary of my research in the portfolio section, and (3) read my blog mainly about the experience in data science competitions as well as various side projects.
+
 Education
 ======
 * Ph.D. in Transport & Planning, TU Delft, 2019 (expected).
