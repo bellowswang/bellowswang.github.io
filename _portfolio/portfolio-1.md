@@ -1,6 +1,6 @@
 ---
-title: "Road Network Design in a Developing Country Using Mobile Phone Data: An Application to Senegal"
-excerpt: "A telecommunication-based trip distribution model embedded in a road network optimization algorithm. <br/><br/><img src='/images/rnd.png'>"
+title: "Road network design in a developing country using mobile phone data: an application to Senegal"
+excerpt: <img src='/images/rnd.png'>"
 collection: portfolio
 ---
 
