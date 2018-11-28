@@ -1,6 +1,6 @@
 ---
 title: "Understanding travellers’ preferences for different types of trip destination based on mobile internet usage data"
-excerpt: "<img src='/images/mobileinternet.png'>"
+excerpt: "<img src='/images/mobileinternet.png' alt="drawing" width="100"/>"
 collection: portfolio
 ---
 
