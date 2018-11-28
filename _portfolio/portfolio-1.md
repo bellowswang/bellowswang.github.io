@@ -1,6 +1,6 @@
 ---
 title: "Road network design in a developing country using mobile phone data"
-excerpt: "<img src='/images/rnd.png' width="50"/>"
+excerpt: <img src='/images/rnd.png' width="50" />
 collection: portfolio
 ---
 
