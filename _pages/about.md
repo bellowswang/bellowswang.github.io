@@ -14,9 +14,11 @@ In this website, you can (1) find my CV below, (2) find the summary of my resear
 
 Education
 ======
-* Ph.D. in Transport & Planning, TU Delft, 2019 (expected).
-* M.S. in Transport & Planning, TU Delft, 2015.
-* B.S. in Transportation, Shanghai Jiao Tong University, 2013.
+* Ph.D. in Transport & Planning, TU Delft, 2015 - 2019 (expected).
+	* Topic: Using big data to inform travel demand models
+	* Supervisors: Gonçalo Correia, Bart van Arem and Harry Timmermans
+* M.S. in Transport & Planning, TU Delft, 2013 - 2015.
+* B.S. in Transportation, Shanghai Jiao Tong University, 2009 - 2013.
 
 Publications
 ======
