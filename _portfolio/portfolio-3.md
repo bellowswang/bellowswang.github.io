@@ -1,6 +1,6 @@
 ---
 title: "Using metro smart card data to model location choice of after-work activities"
-excerpt: "Given a metro commuter's home and workplace stations, can we predict where this person would like to visit after work? To address this problem, a discrete choice model was estimated using smart card data from Shanghai, China. The model can further serve as a tool to help retail companies locate their business optimally and help urban decision makers to plan transport networks and land use more reasonably. <br/><br/><img src='/images/afterwork.png' width='400'/>"
+excerpt: "Given a metro commuter's home and workplace stations, can we predict where this person would like to visit after work? To address this problem, a discrete choice model was estimated using smart card data from Shanghai, China. The model can further serve as a tool to help retail companies locate their business optimally and help urban decision makers to plan transport networks and land use more reasonably. [[link](https://www.sciencedirect.com/science/article/pii/S0966692317300029)] <br/><br/><img src='/images/afterwork.png' width='400'/>"
 collection: portfolio
 ---
 
