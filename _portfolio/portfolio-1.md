@@ -1,6 +1,6 @@
 ---
-title: "Road network design in a developing country using mobile phone data: an application to Senegal"
-excerpt: "<img src='/images/rnd.png' alt="drawing" width="100"/>"
+title: "Road network design in a developing country using mobile phone data"
+excerpt: "<img src='/images/rnd.png' width="50"/>"
 collection: portfolio
 ---
 
