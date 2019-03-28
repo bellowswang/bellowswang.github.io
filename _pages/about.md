@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I have been working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed models to estimate, explain and predict spatial-temporal behavior of people, which can help urban authorities, mobility companies, retail companies, etc. make better decisions.
+I have been working on urban travel demand modeling using new big data sources, such as mobile phone traces and public transport smart card data. I have developed models to estimate, explain and predict spatial-temporal behavior of people, which can help urban authorities, mobility companies and retail companies make better decisions.
 
 In this website, you can (1) find my CV below, (2) find the summary of my research in the [portfolio](https://bellowswang.github.io/portfolio/) section, and (3) read my [blog](https://bellowswang.github.io/blog/) about the experience in data science competitions as well as other side projects.
 
