@@ -5,9 +5,12 @@ collection: portfolio
 ---
 
 The method consists of three parts:
-* filtering mobile phone traces to derive mobility patterns,
-* building an adapted formulation of the gravity-based trip distribution model, which considers telecommunication intensity (i.e., aggregate number of calls and text messages) and travel time as input to forecast the influence of road improvements on country-wide mobility, and
-* optimizing the road network investment based on the adapted trip distribution model by using a local search algorithm.
-The method was applied to the case study country of Senegal. The mobile phone data was transformed to support informed decisions on road network development in that country given different objectives, namely accessibility and equity.
+* Extracting mobility patterns from mobile phone traces,
+* Building an adapted formulation of the gravity-based trip distribution model, which considers telecommunication intensity (i.e., aggregate number of calls and text messages) and travel time as input to forecast the influence of road improvements on country-wide mobility, and
+* Optimizing the road network investment based on the adapted trip distribution model by using a local search algorithm.
 
-This work was awarded the Transport Prize in the Data for Development (D4D) Challenge in 2015, and the corresponding academic paper was published in [IEEE ITS Magazine](https://ieeexplore.ieee.org/document/8531737) in 2018.
+The method was applied to the case study country of Senegal. The mobile phone data was transformed to support decisions on road network development in that country given different objectives, including accessibility and equity.
+
+This work was awarded the Transport Prize in the Data for Development (D4D) Challenge and presented at the NetMob conference at MIT Media Lab in 2015.
+
+Wang, Yihong, Goncalo Correia, Erik de Romph, and Bruno F. Santos. "Road Network Design in a Developing Country Using Mobile Phone Data: An Application to Senegal." [IEEE Intelligent Transportation Systems Magazine](https://ieeexplore.ieee.org/abstract/document/8531737) (2018).
