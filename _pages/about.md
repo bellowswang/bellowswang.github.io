@@ -26,7 +26,7 @@ Publications
 * Yihong Wang, Gonçalo Correia, Bart van Arem, Harry Timmermans. [Understanding travellers' preferences for different types of trip destination based on mobile internet usage data](https://www.sciencedirect.com/science/article/pii/S0968090X18303346). <i>Transportation Research Part C: Emerging Technologies</i> 90 (2018): 247-259.
 * Yihong Wang, Gonçalo Correia, Erik de Romph, Harry Timmermans. [Using metro smart card data to model location choice of after-work activities: An application to Shanghai](https://www.sciencedirect.com/science/article/pii/S0966692317300029). <i>Journal of Transport Geography</i> 63 (2017): 40-47.
 
-Honors and Awards
+Honors and awards
 ======
 * First prize winner in [Social Media HackBorne: What Makes Citizens in Borne Community Tick](https://www.borneboeit.nl/56366/nieuws/chinese-cheese-eaters-winnen-hackathon?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_details_shares%3BFqNbXrEyTmGFHw95wk5Evg%3D%3D), €750 prize, 2017.
 * Innovation Prize winner in [Shanghai Open Data Application in Social Credit](http://www.sohu.com/a/211498958_796766), ¥5,000 prize, 2017.
