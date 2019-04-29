@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Using new big mobility data sources, such as mobile phone traces and public transport smart card data. I develop models to estimate, explain and predict spatial-temporal behavior of people, which can help urban authorities, mobility companies and retail companies make better decisions.
+Using new big mobility data sources, such as mobile phone traces and public transport smart card data, I develop models to estimate, explain and predict spatial-temporal behavior of people, which can help urban authorities, mobility companies and retail companies make better decisions.
 
 In this website, you can (1) find my CV below, and (2) find the summary of my research in the [portfolio](https://bellowswang.github.io/portfolio/) section.
 
