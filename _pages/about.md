@@ -38,6 +38,7 @@ Honors and awards
 Conference presentations
 ======
 * "A neighborhood-based collaborative filtering algorithm for secondary activity location choice prediction using smart card data." [Transportation Research Board Annual Meeting](https://trid.trb.org/view/1572551), 2019.
+* "Understanding travelers’ preferences for different types of trip destinations based on mobile internet usage data." [International Conference on Travel Behavior Research](http://www.iatbr2018.org/), 2018.
 * "Using mobile internet usage behavior data to understand travel behavior." [TRAIL Congress](http://rstrail.nl/new/phd-congress-2017/), 2017.
 * "Understanding multiday activity patterns based on mobile internet usage behavior." [NetMob](http://netmob.org/), 2017.
 * "Using public transport smart card data to model location choice of after-work activity: An application to Shanghai." [TRAIL Congress](http://rstrail.nl/new/congress-2016/), 2016.
