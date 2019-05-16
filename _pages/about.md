@@ -58,5 +58,6 @@ Activity and services
 
 Teaching
 ======
+* Teaching assistant for [Emerging Topics for Transport & Planning](https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=47883) (for master students), TU Delft, 2019.
 * Teaching assistant for [Transportation and Spatial Modeling](https://ocw.tudelft.nl/courses/transportation-and-spatial-modelling/) (for master students), TU Delft, 2016 - 2017.
 * Teaching assistant for [Inleiding Civiele Techniek](https://ocw.tudelft.nl/courses/inleiding-civiele-techniek/) (for bachelor students), TU Delft, 2016 - 2017.
