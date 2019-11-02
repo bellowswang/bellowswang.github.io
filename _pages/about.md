@@ -22,6 +22,7 @@ Education
 
 Publications
 ======
+* Yihong Wang, Gonçalo Correia, Bart van Arem. [Relationships between mobile phone usage and activity-travel behavior: A review of the literature and an example](https://www.elsevier.com/books/the-evolving-impacts-of-ict-on-activities-and-travel-behavior/ben-elia/978-0-12-816213-2). <i>The Evolving Impact of ICT on Activities and Travel Behaviour</i> 3 (2019): 81.
 * Yihong Wang, Gonçalo Correia, Erik de Romph, Bruno F. Santos. [Road Network Design in a Developing Country Using Mobile Phone Data: An Application to Senegal](https://ieeexplore.ieee.org/document/8531737). <i>IEEE Intelligent Transportation Systems Magazine</i> (2018): early access.
 * Yihong Wang, Gonçalo Correia, Bart van Arem, Harry Timmermans. [Understanding travellers' preferences for different types of trip destination based on mobile internet usage data](https://www.sciencedirect.com/science/article/pii/S0968090X18303346). <i>Transportation Research Part C: Emerging Technologies</i> 90 (2018): 247-259.
 * Yihong Wang, Gonçalo Correia, Erik de Romph, Harry Timmermans. [Using metro smart card data to model location choice of after-work activities: An application to Shanghai](https://www.sciencedirect.com/science/article/pii/S0966692317300029). <i>Journal of Transport Geography</i> 63 (2017): 40-47.
