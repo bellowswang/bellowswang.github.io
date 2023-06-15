@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>This is my third post.</title>
 		<meta name="description" content="This is a post on My Blog about win-win survival strategies.">
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Eleventy Base Blog v8">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Eleventy Base Blog v8">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Data and AI department of/by/for oneself">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Data and AI department of/by/for oneself">
 		
 		<style>/**
  * okaidia theme for JavaScript, CSS and HTML
@@ -179,7 +179,7 @@ pre[class*="language-diff-"] {
 * { box-sizing: border-box; }
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family: Menlo, -apple-system, system-ui, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
@@ -194,6 +194,7 @@ pre[class*="language-diff-"] {
 	--text-color: var(--color-gray-90);
 	--text-color-link: #082840;
 	--text-color-link-active: #5f2b48;
+	--text-background-color-link-active: #ffc;
 	--text-color-link-visited: #17050F;
 
 	--syntax-tab-size: 2;
@@ -209,7 +210,7 @@ pre[class*="language-diff-"] {
 		--text-color-link: #1493fb;
 		--text-color-link-active: #6969f7;
 		--text-color-link-visited: #a6a6f8;
-
+		--text-background-color-link-active: #082840;
 		--background-color: #15202b;
 	}
 }
@@ -266,6 +267,7 @@ a[href]:visited {
 a[href]:hover,
 a[href]:active {
 	color: var(--text-color-link-active);
+	background-color: var(--text-background-color-link-active);
 }
 
 main {
@@ -348,12 +350,14 @@ header {
 .nav-item {
 	display: inline-block;
 	margin-right: 1em;
+	font-size: 0.8em;
 }
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
+	background-color: var(--text-background-color-link-active)
 }
 
 /* Posts list */
@@ -452,13 +456,13 @@ h2 + .header-anchor {
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/" class="home-link">Eleventy Base Blog v8</a>
+			<a href="/" class="home-link">Data and AI department of/by/for oneself</a>
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
 					<li class="nav-item"><a href="/">Home</a></li>
 					<li class="nav-item"><a href="/blog/">Archive</a></li>
-					<li class="nav-item"><a href="/about/">About Me</a></li>
+					<li class="nav-item"><a href="/tags/">Tags</a></li>
 				</ul>
 			</nav>
 		</header>
