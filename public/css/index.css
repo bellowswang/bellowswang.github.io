@@ -153,7 +153,7 @@ header {
 	padding: 1em;
 }
 .home-link {
-	font-size: 1em; /* 16px /16 */
+	font-size: 1.4em; /* 16px /16 */
 	font-weight: 700;
 	margin-right: 2em;
 }
@@ -270,5 +270,9 @@ a[href].header-anchor:focus,
 }
 
 h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+h1 {
 	font-size: 1.5em;
 }
