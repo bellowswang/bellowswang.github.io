@@ -2,6 +2,7 @@
 .message-box {
 	--color-message-box: #ffc;
 	--text-color: #333;
+	--text-color-link-active: #87506e;
 
 	display: block;
 	background-color: var(--color-message-box);
@@ -20,10 +21,14 @@
 	color: var(--color-message-box);
 	background-color: var(--text-color);
 }
+.message-box a[href]:hover,a[href]:active {
+	color: var(--text-color-link-active)
+}
 
 @media (prefers-color-scheme: dark) {
 	.message-box {
 		--color-message-box: #082840;
 		--text-color: #dad8d8;
+		--text-color-link-active: #6969f7;
 	}
 }
