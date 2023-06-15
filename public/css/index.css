@@ -1,6 +1,6 @@
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family: Menlo, -apple-system, system-ui, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
@@ -15,6 +15,7 @@
 	--text-color: var(--color-gray-90);
 	--text-color-link: #082840;
 	--text-color-link-active: #5f2b48;
+	--text-background-color-link-active: #ffc;
 	--text-color-link-visited: #17050F;
 
 	--syntax-tab-size: 2;
@@ -30,7 +31,7 @@
 		--text-color-link: #1493fb;
 		--text-color-link-active: #6969f7;
 		--text-color-link-visited: #a6a6f8;
-
+		--text-background-color-link-active: #082840;
 		--background-color: #15202b;
 	}
 }
@@ -87,6 +88,7 @@ a[href]:visited {
 a[href]:hover,
 a[href]:active {
 	color: var(--text-color-link-active);
+	background-color: var(--text-background-color-link-active);
 }
 
 main {
@@ -169,12 +171,14 @@ header {
 .nav-item {
 	display: inline-block;
 	margin-right: 1em;
+	font-size: 0.8em;
 }
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
+	background-color: var(--text-background-color-link-active)
 }
 
 /* Posts list */
