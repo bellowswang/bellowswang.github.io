@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 eleventyNavigation:
   key: About Me
-  order: 4
+  order: 3
 ---
 # About Me
 <ul style="list-style-type:none; padding-left: 0%;">
