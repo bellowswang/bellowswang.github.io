@@ -6,6 +6,7 @@ eleventyNavigation:
 ---
 # About Me
 <ul style="list-style-type:none; padding-left: 0%;">
+<li>Hi, I'm Yihong <i>(aka Bellows Ξ王)</i>.</li>
 <li>💻 I code on <a href="https://github.com/bellowswang/">Github</a>.</li>
 <li>🐦 I talk about data, AI, music, etc. on <a href="https://twitter.com/BellowsWang/">Twitter</a>.</li>
 <li>🎥 I build AI bots to learn chords from my favorite music and sometimes play 90s to 10s Chinese unpopular songs on <a href="https://www.youtube.com/channel/UCowD4lmDNNHvId7FH4kOyXw/">YouTube</a>.</li>
