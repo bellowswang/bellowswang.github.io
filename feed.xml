@@ -4,10 +4,67 @@
 	<subtitle>I build my own data and AI department, and help people build their own data and AI department of themselves, by themselves, and for themselves</subtitle>
 	<link href="https://bellowswang.github.io/feed.xml" rel="self"/>
 	<link href="https://bellowswang.github.io/"/>
-	<updated>2023-09-12T19:03:33Z</updated>
+	<updated>2023-08-28T00:00:00Z</updated>
 	<id>https://bellowswang.github.io/</id>
 	<author>
 		<name>Yihong Wang</name>
 		<email>bellowswang@gmail.com</email>
 	</author>
+	
+	<entry>
+		<title>Everyone (including Snopp Dogg) should have their own databases.</title>
+		<link href="https://bellowswang.github.io/blog/database/"/>
+		<updated>2023-08-28T00:00:00Z</updated>
+		<id>https://bellowswang.github.io/blog/database/</id>
+		<content type="html">&lt;p&gt;To start building our personal DNA (Data and AI) department, we must first own the data. Nowadays, data are usually not owned by ourselves as the users, but by the tech giants as the service providers. It&#39;s the time to take our data back. The very first step is to create a self-hosted database.&lt;/p&gt;
+&lt;h3 id=&quot;what-is-a-database-wiki-definition&quot; tabindex=&quot;-1&quot;&gt;What is a database? (wiki definition) &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/database/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;A database is an organised collection of data (also known as a data store) stored and accessed electronically through the use of a database management system. Small databases can be stored on a file system, while large databases are hosted on computer clusters of cloud storage.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;why-a-database-database-vs-gsheet-excel&quot; tabindex=&quot;-1&quot;&gt;Why a database? (database vs. gsheet/excel) &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/database/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Many people without technical background are comfortable with using excel or gsheet. They have two drawbacks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The user interface is friendly but it also at the same time limits the performance when the data becomes huge. Imagine loading 10 million rows of data into your excel or gsheet.&lt;/li&gt;
+&lt;li&gt;They have their own ecosystems, which means the I/O interface is closed in their ecosystem as well. For example, if you want to visualise the data from a database, since the interface is universal and open, you can visualise them with many different tools. On the other hand, if you want to visualise the data in an excel file or in a gsheet, your options are quite limited.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;why-a-database-database-vs-python-pandas&quot; tabindex=&quot;-1&quot;&gt;Why a database? (database vs. Python Pandas) &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/database/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Python is popular nowadays. People might ask why they need to use a database while they can use for example Pandas in Python to process the data.&lt;/p&gt;
+&lt;p&gt;Databases are designed for persistent data storage and they are able to handle large volumes of data efficiently, even when the data exceeds the available memory. Data stored in a database remains there even if your Python program or computer crashes.&lt;/p&gt;
+&lt;p&gt;Pandas in Python, on the other hand, is primarily an in-memory data manipulation library. Data loaded into pandas DataFrames is stored in memory, and it&#39;s lost when your program exits. It&#39;s not suitable for long-term data storage or sharing data across multiple applications or users.&lt;/p&gt;
+&lt;h3 id=&quot;types-of-database&quot; tabindex=&quot;-1&quot;&gt;Types of database &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/database/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The most common types include relational databases and NoSQL databases. The former store data in tables with rows and columns. They use a schema to define the structure of the data. The example include PostgreSQL, MySQL, etc. NoSQL databases are designed for flexibility and scalability and can handle unstructured or semi-structured data. The most well-known example is MongoDB, which stores data in the JSON format.&lt;/p&gt;
+&lt;h3 id=&quot;how-to-host-a-database-by-yourself&quot; tabindex=&quot;-1&quot;&gt;How to host a database by yourself? &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/database/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Hosting a database by yourself is way easier than you could imagine. There are just a couple of steps. Let&#39;s go through an example where we host PostgreSQL on our local laptop.&lt;/p&gt;
+&lt;p&gt;Prepare two files. Name one file as &lt;code class=&quot;language-&quot;&gt;docker-compose.yml&lt;/code&gt; and add the following content.&lt;/p&gt;
+&lt;pre class=&quot;language-yaml&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;3.9&#39;&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; postgres
+    &lt;span class=&quot;token key atrule&quot;&gt;env_file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; database.env
+    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; database&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/var/lib/postgresql/data
+    &lt;span class=&quot;token key atrule&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; 5439&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5439&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; unless&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;stopped&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Name the other file as &lt;code class=&quot;language-&quot;&gt;database.env&lt;/code&gt; and add the following content.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;POSTGRES_USER&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;snoopdogg
+&lt;span class=&quot;token constant&quot;&gt;POSTGRES_PASSWORD&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;dropitlikeitshot
+&lt;span class=&quot;token constant&quot;&gt;POSTGRES_DB&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;doggystyle&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Store these two files in the same path and then run the following command line at that path. Make sure &lt;a href=&quot;https://www.docker.com/&quot;&gt;docker&lt;/a&gt; (including &lt;a href=&quot;https://docs.docker.com/compose/&quot;&gt;docker-compose&lt;/a&gt;) has been installed on your system before running it.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;docker-compose&lt;/span&gt; up&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&#39;s assume you set up everything on your local laptop. Then you should be able to access to your database through &lt;code class=&quot;language-&quot;&gt;localhost:5439&lt;/code&gt;, using the username, password and database name specified in the &lt;code class=&quot;language-&quot;&gt;database.env&lt;/code&gt; file.&lt;/p&gt;
+&lt;h3 id=&quot;how-to-query-from-a-database&quot; tabindex=&quot;-1&quot;&gt;How to query from a database? &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/database/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Unfortunately, if you enter &lt;code class=&quot;language-&quot;&gt;localhost:5439&lt;/code&gt; as a URL into your browser, you won&#39;t be able to access anything. A common interface is a database client (or IDE), which is the graphical user interface where you can connect the database and query the data. One of the most famous cross-platform database clients is &lt;a href=&quot;https://www.jetbrains.com/datagrip/&quot;&gt;DataGrip&lt;/a&gt;, which supports almost all kinds of databases. However, it&#39;s not free. I use &lt;a href=&quot;https://dbeaver.io/&quot;&gt;DBeaver&lt;/a&gt; (the Community version) for my personal projects. It&#39;s also cross-platform and quite powerful.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://bellowswang.github.io/img/htRLy9Vx8C-600.avif 600w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://bellowswang.github.io/img/htRLy9Vx8C-600.webp 600w&quot;&gt;&lt;img alt=&quot;Set up the database connection in DBeaver.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://bellowswang.github.io/img/htRLy9Vx8C-600.png&quot; width=&quot;600&quot; height=&quot;470&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;After setting up the database connection in DBeaver, you can just freely create any table as you want in the database by writing SQL. For example, let&#39;s just create a table called &lt;code class=&quot;language-&quot;&gt;snoop_dogg_playlist&lt;/code&gt; in the &lt;code class=&quot;language-&quot;&gt;staging&lt;/code&gt; schema.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://bellowswang.github.io/img/vfhYvGpuJ2-600.avif 600w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://bellowswang.github.io/img/vfhYvGpuJ2-600.webp 600w&quot;&gt;&lt;img alt=&quot;Create a random table.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://bellowswang.github.io/img/vfhYvGpuJ2-600.png&quot; width=&quot;600&quot; height=&quot;413&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Fianlly, you can write another SQL to query from this table you just created.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://bellowswang.github.io/img/3SMAiR6vNm-600.avif 600w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://bellowswang.github.io/img/3SMAiR6vNm-600.webp 600w&quot;&gt;&lt;img alt=&quot;Create a random table.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://bellowswang.github.io/img/3SMAiR6vNm-600.png&quot; width=&quot;600&quot; height=&quot;234&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h3 id=&quot;how-to-ingest-data-into-your-database&quot; tabindex=&quot;-1&quot;&gt;How to ingest data into your database? &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/database/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It&#39;s almost impossible to create all your data by manually writing SQL like &lt;code class=&quot;language-&quot;&gt;CREATE TABLE XXX AS SELECT ...&lt;/code&gt; every single time in DBeaver, not to mention you have to do it row by row for each table. I usually don&#39;t do the data ingestion part in this way.&lt;/p&gt;
+&lt;p&gt;Remember one advantage of database is the universality of its interface. You can easily connect to a database in Python or R, with certain libraries. Even though we have mentioned Python Pandas might not be the best for long-term data storage, but it can do a great job manipulating the data from external sources and then writing them into a connected database, using the &lt;a href=&quot;https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html&quot;&gt;to_sql&lt;/a&gt; api.&lt;/p&gt;
+&lt;p&gt;Just imagine you can run a Python script scraping for example your health data from your smart watch on a regular basis and the data will be regularly inserted into the database, so that you finally own such data in your own database.&lt;/p&gt;
+</content>
+	</entry>
 </feed>
