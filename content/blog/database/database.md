@@ -11,6 +11,8 @@ tags:
 ---
 To start building our personal DNA (Data and AI) department, we must first own the data. Nowadays, data are usually not owned by ourselves as the users, but by the tech giants as the service providers. It's the time to take our data back. The very first step is to create a self-hosted database.
 
+{% image "./snoopdogg.jpeg", "Create a random table." %}
+
 ### What is a database? (wiki definition)
 
 > "A database is an organised collection of data (also known as a data store) stored and accessed electronically through the use of a database management system. Small databases can be stored on a file system, while large databases are hosted on computer clusters of cloud storage."
