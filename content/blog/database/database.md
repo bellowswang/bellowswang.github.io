@@ -1,5 +1,5 @@
 ---
-title: Everyone (including Snopp Dogg) should have their own databases.
+title: Everyone (including Snoop Dogg) should have their own databases.
 description: This is a blog about why everyone should have their own databases and how they can build it from scratch.
 date: 2023-08-28
 tags:
