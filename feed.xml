@@ -17,6 +17,7 @@
 		<updated>2023-08-28T00:00:00Z</updated>
 		<id>https://bellowswang.github.io/blog/database/</id>
 		<content type="html">&lt;p&gt;To start building our personal DNA (Data and AI) department, we must first own the data. Nowadays, data are usually not owned by ourselves as the users, but by the tech giants as the service providers. It&#39;s the time to take our data back. The very first step is to create a self-hosted database.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://bellowswang.github.io/img/SO7y5MHhv4-600.avif 600w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://bellowswang.github.io/img/SO7y5MHhv4-600.webp 600w&quot;&gt;&lt;img alt=&quot;Create a random table.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://bellowswang.github.io/img/SO7y5MHhv4-600.jpeg&quot; width=&quot;600&quot; height=&quot;600&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;h3 id=&quot;what-is-a-database-wiki-definition&quot; tabindex=&quot;-1&quot;&gt;What is a database? (wiki definition) &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/database/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;quot;A database is an organised collection of data (also known as a data store) stored and accessed electronically through the use of a database management system. Small databases can be stored on a file system, while large databases are hosted on computer clusters of cloud storage.&amp;quot;&lt;/p&gt;
