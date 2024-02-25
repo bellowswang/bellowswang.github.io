@@ -40,11 +40,11 @@ In Metabase, a dashboard is composed of multiple questions. A question is just a
 
 {% image "./screenshot1.png", "Create a random table." %}
 
-After processing the data, either through SQL or clicking options on the user interface, we can start visualising the processed data for this question. Based on the structure of processed data, Metabase will offer you all the possible types of visualisations. Choose one and the data will be immediately displayed.
+After processing the data, either through SQL or clicking options on the user interface, you can start visualising the processed data for this question. Based on the structure of processed data, Metabase will offer you all the possible types of visualisations. Choose one and the data will be immediately displayed.
 
 {% image "./screenshot2.png", "Create a random table." %}
 
-Once you've created all the questions and answered them by the visuals, you can bring them together into one dashboard. Here is an example of my dashboards. I ingested all my Fanfou (Chinese Twitter especially for Chinese hipsters) posts and stored them in my database. I used a language embedding model to turn every post into an embedding vector. Then I reduced the dimensions to 2 by running a PCA (principal component analysis) algorithm to the embedding vectors.
+Once you've created all the questions and get them answered by the visuals, you can bring them together into one dashboard. Here is an example of my dashboards. I ingested all my Fanfou (Chinese Twitter especially for Chinese hipsters) posts and stored them in my database. I used a language embedding model to turn every post into an embedding vector. Then I reduced the dimensions to 2 by running a PCA (principal component analysis) algorithm to the embedding vectors.
 
 In the first question view, I plot the data points of my Fanfou posts in the two dimensions and use colors to indicate the year of the post. In the second question view, I plot the time series of two dimensions of PC (principal components). Apparently, my 2nd-dimension PC has decreased a lot in recent years. I'm not very sure about the virtue of the story yet regarding this mysterious PC2, but it's a lot of fun to have my own text data to be analyzed and visualized.
 
