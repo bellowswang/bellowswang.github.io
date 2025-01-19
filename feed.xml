@@ -31,7 +31,7 @@
 &lt;/ul&gt;
 &lt;h3 id=&quot;analyzing-the-data&quot; tabindex=&quot;-1&quot;&gt;Analyzing the data &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/running/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Here’s the visualization I envisioned before starting this project: a scatterplot of my heart rate versus pace for a specific kilometer, with points colored by the month. The y-axis represents heart rate (lower is better), and the x-axis represents pace in minutes per kilometer (also lower is better). My ultimate goal is to shift the trend line between heart rate and pace toward the bottom-left corner of the chart. This makes it easy to track my progress over time.&lt;/p&gt;
-&lt;img src=&quot;https://bellowswang.github.io/img/fOwRrWS1-Y-400.gif&quot; alt=&quot;My running data in 2024.&quot; width=&quot;400&quot; height=&quot;21990&quot; style=&quot;max-width: 100%; height: auto;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+&lt;img src=&quot;https://bellowswang.github.io/img/fOwRrWS1-Y-600.gif&quot; alt=&quot;My running data in 2024.&quot; width=&quot;600&quot; height=&quot;32985&quot; style=&quot;max-width: 100%; height: auto;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
 &lt;p&gt;The results? I’ve been improving steadily, with the most significant progress occurring in September. For a certain kilometer, I could sustain a much higher pace at the same heart rate or a much lower heart rate at the same pace. I noticed another potential leap in November, but due to moving houses and my parents&#39; visit, I couldn’t maintain my running routine. By the time I resumed in December, my performance had slightly regressed.&lt;/p&gt;
 </content>
 	</entry>
