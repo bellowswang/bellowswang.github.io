@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>How I logged and analyzed my running data to track progress in 2024</title>
+		<meta name="description" content="This is a blog about my experience of logging and analysing my running performance data based on the setup of my personal Data and AI department.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Data and AI Department of/by/for Oneself">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Data and AI Department of/by/for Oneself">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: Menlo, -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-background-color-link-active: #ffc;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+		--text-background-color-link-active: #19496e;
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+	background-color: var(--text-background-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1.4em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+	font-size: 0.8em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+	background-color: var(--text-background-color-link-active)
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+h1 {
+	font-size: 1.5em;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Data and AI Department of/by/for Oneself</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/tags/">Tags</a></li>
+					<li class="nav-item"><a href="/about/">About Me</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>How I logged and analyzed my running data to track progress in 2024</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2025-01-19">19 January 2025</time></li>
+	<li><a href="/tags/metabase/" class="post-tag">metabase</a>, </li>
+	<li><a href="/tags/postgres/" class="post-tag">postgres</a>, </li>
+	<li><a href="/tags/fitness/" class="post-tag">fitness</a>, </li>
+	<li><a href="/tags/running/" class="post-tag">running</a></li>
+</ul>
+
+<p>Recently, my personal &quot;Fitness Department&quot; reached out to my &quot;Data and AI Department&quot; with a request: analyze my running performance for the year of 2024. While this &quot;department&quot;-level communication is imaginary, the challenge was very real, and I decided to prioritize this project at the start of 2025.</p>
+<p>Reflecting on it, taking up running was undoubtedly one of the highlights of my 2024. My initial motivation was to maximize my VO2 max, and while my Apple Watch provides an estimate of this metric, its calculation process remains a black box to me. Through some research, I learned that VO2 max generally improves when you can either run at a lower heart rate for the same pace or sustain a higher pace at the same heart rate over a given distance. Apple's Fitness app does offer pace and heart rate data per kilometer for each run, but I wanted a more holistic view. To analyze trends across three dimensions: pace, heart rate and mileage. I needed a far more flexible approach than what the app could provide.</p>
+<p><picture><source type="image/avif" srcset="/img/Z70ramYOYo-600.avif 600w"><source type="image/webp" srcset="/img/Z70ramYOYo-600.webp 600w"><img alt="Running at Central Park in the summer of 2024." loading="lazy" decoding="async" style="max-width: 100%; height: auto;" src="/img/Z70ramYOYo-600.jpeg" width="600" height="800"></picture></p>
+<h3 id="architecture-of-the-project" tabindex="-1">Architecture of the project <a class="header-anchor" href="#architecture-of-the-project">#</a></h3>
+<p>If you’ve read my previous blog posts on why and how everyone should set up their own <a href="https://bellowswang.github.io/blog/database/">databases</a> and <a href="https://bellowswang.github.io/blog/metabase/">dashboards</a>, you’ll find the architecture of this project just as straightforward. It revolves around two components: storing my running data in my own database and analyzing it using my own dashboards.</p>
+<p><picture><source type="image/avif" srcset="/img/CNX3TOyLJL-600.avif 600w"><source type="image/webp" srcset="/img/CNX3TOyLJL-600.webp 600w"><img alt="Architecture of the project." loading="lazy" decoding="async" style="max-width: 100%; height: auto;" src="/img/CNX3TOyLJL-600.png" width="600" height="521"></picture></p>
+<h3 id="logging-the-data" tabindex="-1">Logging the data <a class="header-anchor" href="#logging-the-data">#</a></h3>
+<p>While I’m still working on a fully automated pipeline to transfer data from Apple’s Fitness app to my database, I’ve been manually logging my running data in a Google Sheet for now. This sheet includes four columns: date, pace, heart rate, and distance (in km). A semi-automated pipeline triggers a workflow scheduler to load the data from Google Sheets into my database.</p>
+<p>This setup not only allows me to analyze my data more flexibly but also ensures permanent storage of my data on my own machine, which has two main advantages:</p>
+<ul>
+<li>Data longevity: While it might seem unlikely, apps from tech companies have been shut down in the past, leaving users at risk of losing their data. If Apple ever decides to discontinue the Fitness app, my data will still be safe.</li>
+<li>Future possibilities: Storing my running data now opens the door to combining it with other datasets in the future. This will allow me to explore correlations and even conduct causal analyses across various aspects of my personal data.</li>
+</ul>
+<h3 id="analyzing-the-data" tabindex="-1">Analyzing the data <a class="header-anchor" href="#analyzing-the-data">#</a></h3>
+<p>Here’s the visualization I envisioned before starting this project: a scatterplot of my heart rate versus pace for a specific kilometer, with points colored by the month. The y-axis represents heart rate (lower is better), and the x-axis represents pace in minutes per kilometer (also lower is better). My ultimate goal is to shift the trend line between heart rate and pace toward the bottom-left corner of the chart. This makes it easy to track my progress over time.</p>
+<img src="/img/fOwRrWS1-Y-400.gif" alt="My running data in 2024." width="400" height="21990" style="max-width: 100%; height: auto;" loading="lazy" decoding="async">
+<p>The results? I’ve been improving steadily, with the most significant progress occurring in September. For a certain kilometer, I could sustain a much higher pace at the same heart rate or a much lower heart rate at the same pace. I noticed another potential leap in November, but due to moving houses and my parents' visit, I couldn’t maintain my running routine. By the time I resumed in December, my performance had slightly regressed.</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/blog/dashboard/metabase/">Everyone (including Mr. &amp; Mrs. Smith) should have their own data dashboards.</a></li>
+</ul>
+
+		</main>
+
+		<footer></footer>
+
+		<!-- Current page: /blog/running/ -->
+	</body>
+</html>
