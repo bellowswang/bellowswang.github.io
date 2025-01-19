@@ -47,11 +47,6 @@
 	</url>
 	
 	<url>
-		<loc>https://bellowswang.github.io/tags/another-tag/</loc>
-		<lastmod>2025-01-19</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://bellowswang.github.io/tags/metabase/</loc>
 		<lastmod>2025-01-19</lastmod>
 	</url>
@@ -87,6 +82,11 @@
 	</url>
 	
 	<url>
+		<loc>https://bellowswang.github.io/tags/another-tag/</loc>
+		<lastmod>2025-01-19</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://bellowswang.github.io/tags/database/</loc>
 		<lastmod>2025-01-19</lastmod>
 	</url>
@@ -112,17 +112,17 @@
 	</url>
 	
 	<url>
-		<loc>https://bellowswang.github.io/tags/second-tag/</loc>
-		<lastmod>2025-01-19</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://bellowswang.github.io/tags/fitness/</loc>
 		<lastmod>2025-01-19</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://bellowswang.github.io/tags/running/</loc>
+		<lastmod>2025-01-19</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://bellowswang.github.io/tags/second-tag/</loc>
 		<lastmod>2025-01-19</lastmod>
 	</url>
 </urlset>
