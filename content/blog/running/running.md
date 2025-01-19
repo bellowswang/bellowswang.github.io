@@ -33,6 +33,6 @@ This setup not only allows me to analyze my data more flexibly but also ensures 
 
 Here’s the visualization I envisioned before starting this project: a scatterplot of my heart rate versus pace for a specific kilometer, with points colored by the month. The y-axis represents heart rate (lower is better), and the x-axis represents pace in minutes per kilometer (also lower is better). My ultimate goal is to shift the trend line between heart rate and pace toward the bottom-left corner of the chart. This makes it easy to track my progress over time.
 
-{% image "./Jan-19-2025 20-34-57.gif", "My running data in 2024.", [400], "(max-width: 400px) 100vw, 400px" %}
+{% image "./Jan-19-2025 20-34-57.gif", "My running data in 2024.", [600], "(max-width: 600px) 100vw, 600px" %}
 
 The results? I’ve been improving steadily, with the most significant progress occurring in September. For a certain kilometer, I could sustain a much higher pace at the same heart rate or a much lower heart rate at the same pace. I noticed another potential leap in November, but due to moving houses and my parents' visit, I couldn’t maintain my running routine. By the time I resumed in December, my performance had slightly regressed.
