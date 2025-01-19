@@ -10,24 +10,41 @@ module.exports = eleventyConfig => {
 	}
 
 	// Eleventy Image shortcode
-	// https://www.11ty.dev/docs/plugins/image/
 	eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
-		// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
-		// Warning: Avif can be resource-intensive so take care!
-		let formats = ["avif", "webp", "auto"];
+		// Default widths
+		let defaultWidths = widths || [600];
 		let file = relativeToInputPath(this.page.inputPath, src);
+
+		// Handle .gif files explicitly
+		if (file.endsWith(".gif")) {
+			// Only generate GIF format and preserve animation
+			let metadata = await eleventyImage(file, {
+				widths: defaultWidths,
+				formats: ["gif"], // Only GIF format
+				outputDir: path.join(eleventyConfig.dir.output, "img"),
+				sharpOptions: {
+					animated: true, // Ensure animation is preserved
+				},
+			});
+
+			// Serve the GIF directly without a <picture> element
+			return `<img src="${metadata.gif[0].url}" alt="${alt}" width="${metadata.gif[0].width}" height="${metadata.gif[0].height}" style="max-width: 100%; height: auto;" loading="lazy" decoding="async">`;
+		}
+
+		// For other image types, generate multiple formats
 		let metadata = await eleventyImage(file, {
-			widths: [600],
-			formats,
-			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+			widths: defaultWidths,
+			formats: ["avif", "webp", "auto"],
+			outputDir: path.join(eleventyConfig.dir.output, "img"),
 		});
 
-		// TODO loading=eager and fetchpriority=high
+		// Standard responsive image generation
 		let imageAttributes = {
 			alt,
 			sizes,
 			loading: "lazy",
 			decoding: "async",
+			style: "max-width: 100%; height: auto;",
 		};
 		return eleventyImage.generateHTML(metadata, imageAttributes);
 	});
