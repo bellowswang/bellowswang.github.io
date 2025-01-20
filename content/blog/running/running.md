@@ -16,7 +16,7 @@ Reflecting on it, taking up running was undoubtedly one of the highlights of my 
 
 ### Architecture of the project
 
-If you’ve read my previous blog posts on why and how everyone should set up their own <a href="https://bellowswang.github.io/blog/database/">databases</a> and <a href="https://bellowswang.github.io/blog/metabase/">dashboards</a>, you’ll find the architecture of this project just as straightforward. It revolves around two components: storing my running data in my own database and analyzing it using my own dashboards.
+If you’ve read my previous blog posts on why and how everyone should set up their own <a href="https://bellowswang.github.io/blog/database/">databases</a> and <a href="https://bellowswang.github.io/blog/dashboard/metabase/">dashboards</a>, you’ll find the architecture of this project just as straightforward. It revolves around two components: storing my running data in my own database and analyzing it using my own dashboards.
 
 {% image "architecture.png", "Architecture of the project." %}
 
