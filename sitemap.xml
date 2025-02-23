@@ -87,11 +87,6 @@
 	</url>
 	
 	<url>
-		<loc>https://bellowswang.github.io/tags/second-tag/</loc>
-		<lastmod>2025-02-23</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://bellowswang.github.io/tags/database/</loc>
 		<lastmod>2025-02-23</lastmod>
 	</url>
@@ -113,6 +108,11 @@
 	
 	<url>
 		<loc>https://bellowswang.github.io/tags/vectordb/</loc>
+		<lastmod>2025-02-23</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://bellowswang.github.io/tags/second-tag/</loc>
 		<lastmod>2025-02-23</lastmod>
 	</url>
 	
