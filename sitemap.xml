@@ -87,12 +87,27 @@
 	</url>
 	
 	<url>
-		<loc>https://bellowswang.github.io/tags/database/</loc>
+		<loc>https://bellowswang.github.io/tags/second-tag/</loc>
 		<lastmod>2025-06-07</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://bellowswang.github.io/tags/postgres/</loc>
+		<lastmod>2025-06-07</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://bellowswang.github.io/tags/fitness/</loc>
+		<lastmod>2025-06-07</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://bellowswang.github.io/tags/running/</loc>
+		<lastmod>2025-06-07</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://bellowswang.github.io/tags/database/</loc>
 		<lastmod>2025-06-07</lastmod>
 	</url>
 	
@@ -108,21 +123,6 @@
 	
 	<url>
 		<loc>https://bellowswang.github.io/tags/vectordb/</loc>
-		<lastmod>2025-06-07</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://bellowswang.github.io/tags/second-tag/</loc>
-		<lastmod>2025-06-07</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://bellowswang.github.io/tags/fitness/</loc>
-		<lastmod>2025-06-07</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://bellowswang.github.io/tags/running/</loc>
 		<lastmod>2025-06-07</lastmod>
 	</url>
 </urlset>
