@@ -1,15 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
-	<title>Data and AI Department of/by/for Oneself</title>
+	<title>Personal Data and AI Department</title>
 	<subtitle>I build my own data and AI department, and help people build their own data and AI department of themselves, by themselves, and for themselves</subtitle>
 	<link href="https://bellowswang.github.io/feed.xml" rel="self"/>
 	<link href="https://bellowswang.github.io/"/>
-	<updated>2025-01-19T00:00:00Z</updated>
+	<updated>2026-02-08T00:00:00Z</updated>
 	<id>https://bellowswang.github.io/</id>
 	<author>
 		<name>Yihong Wang</name>
 		<email>bellowswang@gmail.com</email>
 	</author>
+	
+	<entry>
+		<title>Everyone (including new parents at 3am) should have their own AI agent.</title>
+		<link href="https://bellowswang.github.io/blog/baby-agent/"/>
+		<updated>2026-02-08T00:00:00Z</updated>
+		<id>https://bellowswang.github.io/blog/baby-agent/</id>
+		<content type="html">&lt;p&gt;Two things happened to me at the end of 2025. I became a proud father. And I switched to a new team at work and started working on building AI agents. Naturally, I wanted to combine both into one side project, not only making my life easier as a father (hopefully), but also helping me learn more about building AI agents.&lt;/p&gt;
+&lt;p&gt;When you have a newborn, your life becomes a series of data points: how many milliliters of milk, which side for breastfeeding, how many wet diapers, how many minutes of sleep, what time was the last feeding. The kraamzorg asks you these questions at every visit. Your wife asks you at every handoff. You ask yourself at 3am when you can&#39;t remember if the last bottle was 30 minutes ago or 3 hours ago.&lt;/p&gt;
+&lt;p&gt;Of course, there are apps for this. I tried Huckleberry, which is one of the most popular baby tracking apps. But the core features are basic. You just log events (feedings, diapers, sleep) and see visualizations. Tap a category, fill in a form, submit. It works, but it felt like exactly the kind of thing an AI agent could replace. And with an LLM in the loop, the logging interface could be much more casual - no rigid forms, just natural language. You could text &amp;quot;120ml at 2pm&amp;quot; in a family group chat and be done with it.&lt;/p&gt;
+&lt;p&gt;So I decided to build an AI agent that my whole family could use, which is a Telegram bot where anyone could send a natural language message and have it logged into a PostgreSQL database automatically (remember I set up a database for my DNA Department in a previous &lt;a href=&quot;https://bellowswang.github.io/blog/database/&quot;&gt;post&lt;/a&gt;?). No forms, no dropdowns, no app to learn. Just text what happened, in Chinese or English, and the agent handles the rest.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://bellowswang.github.io/img/al7ExAEtAL-600.avif 600w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://bellowswang.github.io/img/al7ExAEtAL-600.webp 600w&quot;&gt;&lt;img alt=&quot;My AI agent for baby tracking.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; style=&quot;max-width: 100%; height: auto;&quot; src=&quot;https://bellowswang.github.io/img/al7ExAEtAL-600.png&quot; width=&quot;600&quot; height=&quot;1298&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-project-a-telegram-bot-baby-tracker&quot; tabindex=&quot;-1&quot;&gt;The project: a Telegram bot baby tracker &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/baby-agent/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The idea was simple. A family Telegram group where anyone (my wife, my parents, my in-laws) could log baby activities by just sending a message. The agent would:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Parse natural language input in Chinese or English&lt;/li&gt;
+&lt;li&gt;Log the data into my self-hosted PostgreSQL tables (feedings, diapers, sleep, supplements, growth, temperature)&lt;/li&gt;
+&lt;li&gt;Respond with a confirmation and a 24-hour summary&lt;/li&gt;
+&lt;li&gt;Answer ad-hoc questions like &amp;quot;how much milk did the baby drink today?&amp;quot; or &amp;quot;show me a chart of sleep patterns this week&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The database schema covers eight activity types: bottle feedings, breastfeeding, diapers, sleep, pumping, supplements, growth measurements, and temperature readings. All tables live in a schema with timestamps and a field tracking who sent the message.&lt;/p&gt;
+&lt;h3 id=&quot;framework-choice-claude-agent-sdk&quot; tabindex=&quot;-1&quot;&gt;Framework choice: Claude Agent SDK &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/baby-agent/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I&#39;m a Claude Max subscriber and Claude Code power user, so the Claude Agent SDK was the natural choice for building this agent. There was one concern: at the time, the SDK wasn&#39;t fully open-sourced, which made it harder to understand the internals.&lt;/p&gt;
+&lt;p&gt;But I found &lt;a href=&quot;https://github.com/shareAI-lab/learn-claude-code&quot;&gt;learn-claude-code&lt;/a&gt;, a community project that reverse-engineered the core concepts behind Claude Code&#39;s agent architecture. Reading through that codebase turned out to be one of the most important things I did for this project, not only for the baby tracker specifically, but also for understanding what makes something truly agentic.&lt;/p&gt;
+&lt;h3 id=&quot;version-1-the-non-agentic-agent&quot; tabindex=&quot;-1&quot;&gt;Version 1: the non-agentic agent &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/baby-agent/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Here&#39;s the ironic thing. I used Claude Code, arguably the most powerful agentic coding tool available, to build my first version of the baby tracker. And it produced the most non-agentic code ever.&lt;/p&gt;
+&lt;p&gt;The first version had nine separate Python tool files, each one a hardcoded function with explicit validation logic, explicit database operations, and explicit response formatting:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-&quot;&gt;bottle_feeding.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-&quot;&gt;breastfeeding.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-&quot;&gt;diaper.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-&quot;&gt;sleep.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-&quot;&gt;pumping.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-&quot;&gt;growth.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-&quot;&gt;supplement.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-&quot;&gt;temperature.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-&quot;&gt;summary.py&lt;/code&gt; + &lt;code class=&quot;language-&quot;&gt;utils.py&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Each tool had a rigid function signature: &lt;code class=&quot;language-&quot;&gt;log_bottle_feeding(volume_ml=100, type=&amp;quot;formula&amp;quot;)&lt;/code&gt;. Each tool manually validated inputs, manually converted timezones, manually formatted responses, and manually calculated 24-hour summaries. The agent&#39;s job was reduced to: parse the user&#39;s message, figure out which specific pre-defined function to call, fill in the parameters, return the result.&lt;/p&gt;
+&lt;p&gt;It worked. But it was not there yet. Want to add a new tracking category? Write another file. Want to change how summaries are calculated? Edit every single tool file. Want the agent to generate a chart? Sorry, there&#39;s no tool for that.&lt;/p&gt;
+&lt;h3 id=&quot;the-revelation-what-makes-something-truly-agentic&quot; tabindex=&quot;-1&quot;&gt;The revelation: what makes something truly agentic? &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/baby-agent/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Then I read through the &lt;a href=&quot;https://github.com/shareAI-lab/learn-claude-code&quot;&gt;learn-claude-code&lt;/a&gt; codebase, and something clicked.&lt;/p&gt;
+&lt;p&gt;Claude Code doesn&#39;t have a &lt;code class=&quot;language-&quot;&gt;fix_bug()&lt;/code&gt; tool or a &lt;code class=&quot;language-&quot;&gt;refactor_function()&lt;/code&gt; tool or a &lt;code class=&quot;language-&quot;&gt;write_test()&lt;/code&gt; tool. It has primitive, general-purpose tools:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Read&lt;/strong&gt; — read a file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Write&lt;/strong&gt; — write a file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Glob&lt;/strong&gt; — find files by pattern&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Grep&lt;/strong&gt; — search file contents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That&#39;s it. You give it capabilities, not purposes. The agent figures out what steps to take, what code to write, what commands to run, all in a while loop. You don&#39;t define a workflow. Instead you define a toolbox. The magic is in the &lt;a href=&quot;https://arxiv.org/abs/2210.03629&quot;&gt;ReAct&lt;/a&gt;/&lt;a href=&quot;https://arxiv.org/abs/2402.01030&quot;&gt;CodeAct&lt;/a&gt;-style agent while loop: the model observes the environment, reasons about what to do, takes an action, observes the result, and repeats, until the purpose is achieved.&lt;/p&gt;
+&lt;p&gt;This was the fundamental mistake in my Version 1. I had defined purposes (log a bottle feeding, query diapers, calculate summaries) instead of capabilities (read files, run code, query a database). I had built an explicit workflow, not an agent.&lt;/p&gt;
+&lt;h3 id=&quot;version-2-the-truly-agentic-approach&quot; tabindex=&quot;-1&quot;&gt;Version 2: the truly agentic approach &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/baby-agent/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Armed with this insight, I rewrote the entire thing. Here&#39;s the core of the new agent configuration:&lt;/p&gt;
+&lt;pre class=&quot;language-python&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;builtin_tools &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Bash&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Read&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Glob&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Grep&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Four tools. That&#39;s all. The agent gets:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A system prompt explaining what it is (a baby tracker for family use)&lt;/li&gt;
+&lt;li&gt;A &lt;code class=&quot;language-&quot;&gt;.claude/CLAUDE.md&lt;/code&gt; file documenting the database schema and connection code&lt;/li&gt;
+&lt;li&gt;Four built-in tools to interact with the environment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When a user sends &amp;quot;120ml formula&amp;quot;, the agent doesn&#39;t call a specific &lt;code class=&quot;language-&quot;&gt;log_bottle_feeding()&lt;/code&gt; function. Instead, it:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Reads &lt;code class=&quot;language-&quot;&gt;.claude/CLAUDE.md&lt;/code&gt; to understand the database schema&lt;/li&gt;
+&lt;li&gt;Writes Python code to insert a row into my &lt;code class=&quot;language-&quot;&gt;bottle_feedings&lt;/code&gt; table&lt;/li&gt;
+&lt;li&gt;Runs the code via Bash&lt;/li&gt;
+&lt;li&gt;Queries the database for 24-hour totals&lt;/li&gt;
+&lt;li&gt;Formats a response&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When a user asks &amp;quot;show me a chart of feeding patterns this week&amp;quot;, the agent doesn&#39;t return an error saying &amp;quot;no chart tool available.&amp;quot; Instead, it:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Writes Python code using matplotlib to query the database and generate a chart&lt;/li&gt;
+&lt;li&gt;Saves the chart as a PNG&lt;/li&gt;
+&lt;li&gt;Returns the image&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://bellowswang.github.io/img/cqtPgd7IMt-600.avif 600w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://bellowswang.github.io/img/cqtPgd7IMt-600.webp 600w&quot;&gt;&lt;img alt=&quot;My AI agent shows me the sleeping chart.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; style=&quot;max-width: 100%; height: auto;&quot; src=&quot;https://bellowswang.github.io/img/cqtPgd7IMt-600.png&quot; width=&quot;600&quot; height=&quot;1298&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-essence-of-agentic-ability&quot; tabindex=&quot;-1&quot;&gt;The essence of agentic ability &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/baby-agent/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The experience crystallized a simple framework for thinking about AI agents:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Workflow approach&lt;/strong&gt; (Version 1): You define the steps. The LLM fills in the blanks within each step. You are the architect, the model is the laborer.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Agent approach&lt;/strong&gt; (Version 2): You define the capabilities. The LLM decides the steps. You provide the toolbox, the model is the architect.&lt;/p&gt;
+&lt;p&gt;The irony still feels funny to me. The most agentic coding tool in the world, Claude Code, initially produced the most non-agentic code when I asked it to build an agent. I think that was on me though. It&#39;s because in my prompt, I asked it to &amp;quot;build a baby tracker with tools for each activity type.&amp;quot; I described a workflow. It built a workflow. The tool faithfully implemented my non-agentic design.&lt;/p&gt;
+&lt;p&gt;The lesson: give the agent narrow, purpose-built tools, and you get a narrow, purpose-built system. Give it general-purpose capabilities and good documentation, and you get something that can handle anything you throw at it, including things you never anticipated.&lt;/p&gt;
+&lt;h3 id=&quot;is-software-dead&quot; tabindex=&quot;-1&quot;&gt;Is software dead? &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/baby-agent/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Building this agent made me think about the &amp;quot;software is dead&amp;quot; narrative that&#39;s been going around. The idea is that AI agents will replace traditional SaaS products. When Claude launched Cowork and made plugins available for industries like legal, the stock market dipped because people started doubting the future of SaaS. And honestly, my experience building this baby tracker is a data point in that direction. Huckleberry is a well-designed app with a team behind it, and I replaced its core functionality with a weekend project.&lt;/p&gt;
+&lt;p&gt;I&#39;ve seen this pattern in other areas of my life too. Last year when I moved to a new house, I chose Apple HomeKit over Home Assistant because I thought maintaining Home Assistant would be too time-consuming. If I were making that choice today, it would be a no-brainer. Home Assistant all the way. With tools like Claude Code, the &amp;quot;maintenance burden&amp;quot; of self-hosted, open-source software has dropped dramatically. The trade-off has shifted.&lt;/p&gt;
+&lt;p&gt;But I don&#39;t think the story is that simple. There&#39;s one thing Huckleberry has that my agent doesn&#39;t: a data flywheel. Huckleberry has data from thousands of babies — their sleep patterns, their feeding schedules, their growth curves. They can train algorithms to predict the optimal nap time for your specific baby based on patterns from all the other babies in their dataset. My agent only has data from one baby. I can use an LLM as a common-sense sanity check (&amp;quot;does this sleep schedule seem normal for a 2-month-old?&amp;quot;), but that&#39;s not the same as a quantitative prediction model trained on real data from thousands of infants in this specific domain.&lt;/p&gt;
+&lt;p&gt;So maybe software isn&#39;t dead, but the moat has moved. The moat is no longer the UI, the forms, the basic CRUD operations. Those are replaceable by agents. The moat is the data. The flywheel that no individual user can replicate on their own.&lt;/p&gt;
+&lt;h3 id=&quot;is-the-dashboard-dead&quot; tabindex=&quot;-1&quot;&gt;Is the dashboard dead? &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/baby-agent/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I wrote about setting up my own &lt;a href=&quot;https://bellowswang.github.io/blog/dashboard/metabase/&quot;&gt;Metabase dashboards&lt;/a&gt; as a core piece of my DNA department. Now that I have an agent that can generate any chart on demand via Telegram, do I still need them?&lt;/p&gt;
+&lt;p&gt;This is actually a classic debate in data teams: curated dashboards vs. self-service ad-hoc analysis. After living with both, I think they serve fundamentally different modes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dashboards are for monitoring.&lt;/strong&gt; You open Metabase and immediately see 5-10 metrics at a glance: total milk today, diaper count, sleep hours, feeding trend this week. Your eye catches the anomaly without asking a question. It&#39;s the single source of truth for your KPIs, rendered the same way every time, instantly, for free.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Chat is for investigation.&lt;/strong&gt; &amp;quot;What&#39;s the correlation between sleep duration and feeding volume this week?&amp;quot; or &amp;quot;Compare this week&#39;s feeding pattern to last week.&amp;quot; These are questions you can&#39;t pre-build a dashboard for. The agent writes custom code, generates a one-off chart, and you ask follow-up questions. That flexibility is something no dashboard can match.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://bellowswang.github.io/img/Py-OemgxMr-600.avif 600w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://bellowswang.github.io/img/Py-OemgxMr-600.webp 600w&quot;&gt;&lt;img alt=&quot;Chart made by my AI agent.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; style=&quot;max-width: 100%; height: auto;&quot; src=&quot;https://bellowswang.github.io/img/Py-OemgxMr-600.jpeg&quot; width=&quot;600&quot; height=&quot;341&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;The lines do blur though. You could persist the logic for generating a specific chart as an agent skill, so it produces the same stats the same way every time, which is functionally similar to a dashboard view. But each run still costs API tokens and has latency (the agent thinks, writes code, runs it), while Metabase loads instantly. For something you check five times a day, that difference matters.&lt;/p&gt;
+&lt;p&gt;Where dashboards win: glanceability, zero latency, shared views the whole family can bookmark. Where chat wins: unlimited flexibility, follow-up questions, no maintenance when the schema changes. But both are &lt;strong&gt;pull&lt;/strong&gt; interfaces, so you need to go to them. There&#39;s a third mode that neither does well: &lt;strong&gt;push.&lt;/strong&gt; The agent comes to you. &amp;quot;The baby slept 30% less than usual today.&amp;quot; &amp;quot;Feeding volume is trending down this week.&amp;quot; A Telegram-based agent is naturally suited for this. It&#39;s already in your chat. As a next step, I&#39;ll explore how to make the agent more proactive and share with you in future.&lt;/p&gt;
+&lt;p&gt;My current take: I&#39;ll probably shift most of my ad-hoc analysis to the chat interface and keep Metabase for the persistent, at-a-glance monitoring dashboard. The agent is better for exploring; the dashboard is better for watching.&lt;/p&gt;
+&lt;h3 id=&quot;my-dna-department-grows&quot; tabindex=&quot;-1&quot;&gt;My DNA department grows &lt;a class=&quot;header-anchor&quot; href=&quot;https://bellowswang.github.io/blog/baby-agent/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;My personal DNA department now has its first AI employee. It works the night shift. It speaks Chinese and English. It&#39;s a generalist, being so agentic that it doesn&#39;t need a dedicated script for learning a new tool — you just update the documentation and it figures out the rest by itself. What&#39;s the next agent the department might have? Stay tuned.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>How I logged and analyzed my running data to track progress in 2024</title>

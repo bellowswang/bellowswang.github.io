@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Everyone (including new parents at 3am) should have their own AI agent.</title>
+		<meta name="description" content="Building an AI agent to help raise a newborn — and the journey from 4000 lines of hardcoded code to a truly agentic approach.">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Personal Data and AI Department">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Personal Data and AI Department">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: Menlo, -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-background-color-link-active: #ffc;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+		--text-background-color-link-active: #19496e;
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+	background-color: var(--text-background-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1.4em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+	font-size: 0.8em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+	background-color: var(--text-background-color-link-active)
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+h1 {
+	font-size: 1.5em;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Personal Data and AI Department</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/tags/">Tags</a></li>
+					<li class="nav-item"><a href="/about/">About Me</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			
+<h1>Everyone (including new parents at 3am) should have their own AI agent.</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2026-02-08">08 February 2026</time></li>
+	<li><a href="/tags/agent/" class="post-tag">agent</a>, </li>
+	<li><a href="/tags/claude/" class="post-tag">claude</a>, </li>
+	<li><a href="/tags/postgres/" class="post-tag">postgres</a>, </li>
+	<li><a href="/tags/baby/" class="post-tag">baby</a>, </li>
+	<li><a href="/tags/metabase/" class="post-tag">metabase</a></li>
+</ul>
+
+<p>Two things happened to me at the end of 2025. I became a proud father. And I switched to a new team at work and started working on building AI agents. Naturally, I wanted to combine both into one side project, not only making my life easier as a father (hopefully), but also helping me learn more about building AI agents.</p>
+<p>When you have a newborn, your life becomes a series of data points: how many milliliters of milk, which side for breastfeeding, how many wet diapers, how many minutes of sleep, what time was the last feeding. The kraamzorg asks you these questions at every visit. Your wife asks you at every handoff. You ask yourself at 3am when you can't remember if the last bottle was 30 minutes ago or 3 hours ago.</p>
+<p>Of course, there are apps for this. I tried Huckleberry, which is one of the most popular baby tracking apps. But the core features are basic. You just log events (feedings, diapers, sleep) and see visualizations. Tap a category, fill in a form, submit. It works, but it felt like exactly the kind of thing an AI agent could replace. And with an LLM in the loop, the logging interface could be much more casual - no rigid forms, just natural language. You could text &quot;120ml at 2pm&quot; in a family group chat and be done with it.</p>
+<p>So I decided to build an AI agent that my whole family could use, which is a Telegram bot where anyone could send a natural language message and have it logged into a PostgreSQL database automatically (remember I set up a database for my DNA Department in a previous <a href="https://bellowswang.github.io/blog/database/">post</a>?). No forms, no dropdowns, no app to learn. Just text what happened, in Chinese or English, and the agent handles the rest.</p>
+<p><picture><source type="image/avif" srcset="/img/al7ExAEtAL-600.avif 600w"><source type="image/webp" srcset="/img/al7ExAEtAL-600.webp 600w"><img alt="My AI agent for baby tracking." loading="lazy" decoding="async" style="max-width: 100%; height: auto;" src="/img/al7ExAEtAL-600.png" width="600" height="1298"></picture></p>
+<h3 id="the-project-a-telegram-bot-baby-tracker" tabindex="-1">The project: a Telegram bot baby tracker <a class="header-anchor" href="#the-project-a-telegram-bot-baby-tracker">#</a></h3>
+<p>The idea was simple. A family Telegram group where anyone (my wife, my parents, my in-laws) could log baby activities by just sending a message. The agent would:</p>
+<ul>
+<li>Parse natural language input in Chinese or English</li>
+<li>Log the data into my self-hosted PostgreSQL tables (feedings, diapers, sleep, supplements, growth, temperature)</li>
+<li>Respond with a confirmation and a 24-hour summary</li>
+<li>Answer ad-hoc questions like &quot;how much milk did the baby drink today?&quot; or &quot;show me a chart of sleep patterns this week&quot;</li>
+</ul>
+<p>The database schema covers eight activity types: bottle feedings, breastfeeding, diapers, sleep, pumping, supplements, growth measurements, and temperature readings. All tables live in a schema with timestamps and a field tracking who sent the message.</p>
+<h3 id="framework-choice-claude-agent-sdk" tabindex="-1">Framework choice: Claude Agent SDK <a class="header-anchor" href="#framework-choice-claude-agent-sdk">#</a></h3>
+<p>I'm a Claude Max subscriber and Claude Code power user, so the Claude Agent SDK was the natural choice for building this agent. There was one concern: at the time, the SDK wasn't fully open-sourced, which made it harder to understand the internals.</p>
+<p>But I found <a href="https://github.com/shareAI-lab/learn-claude-code">learn-claude-code</a>, a community project that reverse-engineered the core concepts behind Claude Code's agent architecture. Reading through that codebase turned out to be one of the most important things I did for this project, not only for the baby tracker specifically, but also for understanding what makes something truly agentic.</p>
+<h3 id="version-1-the-non-agentic-agent" tabindex="-1">Version 1: the non-agentic agent <a class="header-anchor" href="#version-1-the-non-agentic-agent">#</a></h3>
+<p>Here's the ironic thing. I used Claude Code, arguably the most powerful agentic coding tool available, to build my first version of the baby tracker. And it produced the most non-agentic code ever.</p>
+<p>The first version had nine separate Python tool files, each one a hardcoded function with explicit validation logic, explicit database operations, and explicit response formatting:</p>
+<ul>
+<li><code class="language-">bottle_feeding.py</code></li>
+<li><code class="language-">breastfeeding.py</code></li>
+<li><code class="language-">diaper.py</code></li>
+<li><code class="language-">sleep.py</code></li>
+<li><code class="language-">pumping.py</code></li>
+<li><code class="language-">growth.py</code></li>
+<li><code class="language-">supplement.py</code></li>
+<li><code class="language-">temperature.py</code></li>
+<li><code class="language-">summary.py</code> + <code class="language-">utils.py</code></li>
+</ul>
+<p>Each tool had a rigid function signature: <code class="language-">log_bottle_feeding(volume_ml=100, type=&quot;formula&quot;)</code>. Each tool manually validated inputs, manually converted timezones, manually formatted responses, and manually calculated 24-hour summaries. The agent's job was reduced to: parse the user's message, figure out which specific pre-defined function to call, fill in the parameters, return the result.</p>
+<p>It worked. But it was not there yet. Want to add a new tracking category? Write another file. Want to change how summaries are calculated? Edit every single tool file. Want the agent to generate a chart? Sorry, there's no tool for that.</p>
+<h3 id="the-revelation-what-makes-something-truly-agentic" tabindex="-1">The revelation: what makes something truly agentic? <a class="header-anchor" href="#the-revelation-what-makes-something-truly-agentic">#</a></h3>
+<p>Then I read through the <a href="https://github.com/shareAI-lab/learn-claude-code">learn-claude-code</a> codebase, and something clicked.</p>
+<p>Claude Code doesn't have a <code class="language-">fix_bug()</code> tool or a <code class="language-">refactor_function()</code> tool or a <code class="language-">write_test()</code> tool. It has primitive, general-purpose tools:</p>
+<ul>
+<li><strong>Read</strong> — read a file</li>
+<li><strong>Write</strong> — write a file</li>
+<li><strong>Glob</strong> — find files by pattern</li>
+<li><strong>Grep</strong> — search file contents</li>
+</ul>
+<p>That's it. You give it capabilities, not purposes. The agent figures out what steps to take, what code to write, what commands to run, all in a while loop. You don't define a workflow. Instead you define a toolbox. The magic is in the <a href="https://arxiv.org/abs/2210.03629">ReAct</a>/<a href="https://arxiv.org/abs/2402.01030">CodeAct</a>-style agent while loop: the model observes the environment, reasons about what to do, takes an action, observes the result, and repeats, until the purpose is achieved.</p>
+<p>This was the fundamental mistake in my Version 1. I had defined purposes (log a bottle feeding, query diapers, calculate summaries) instead of capabilities (read files, run code, query a database). I had built an explicit workflow, not an agent.</p>
+<h3 id="version-2-the-truly-agentic-approach" tabindex="-1">Version 2: the truly agentic approach <a class="header-anchor" href="#version-2-the-truly-agentic-approach">#</a></h3>
+<p>Armed with this insight, I rewrote the entire thing. Here's the core of the new agent configuration:</p>
+<pre class="language-python" tabindex="0"><code class="language-python">builtin_tools <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Bash"</span><span class="token punctuation">,</span> <span class="token string">"Read"</span><span class="token punctuation">,</span> <span class="token string">"Glob"</span><span class="token punctuation">,</span> <span class="token string">"Grep"</span><span class="token punctuation">]</span></code></pre>
+<p>Four tools. That's all. The agent gets:</p>
+<ol>
+<li>A system prompt explaining what it is (a baby tracker for family use)</li>
+<li>A <code class="language-">.claude/CLAUDE.md</code> file documenting the database schema and connection code</li>
+<li>Four built-in tools to interact with the environment</li>
+</ol>
+<p>When a user sends &quot;120ml formula&quot;, the agent doesn't call a specific <code class="language-">log_bottle_feeding()</code> function. Instead, it:</p>
+<ol>
+<li>Reads <code class="language-">.claude/CLAUDE.md</code> to understand the database schema</li>
+<li>Writes Python code to insert a row into my <code class="language-">bottle_feedings</code> table</li>
+<li>Runs the code via Bash</li>
+<li>Queries the database for 24-hour totals</li>
+<li>Formats a response</li>
+</ol>
+<p>When a user asks &quot;show me a chart of feeding patterns this week&quot;, the agent doesn't return an error saying &quot;no chart tool available.&quot; Instead, it:</p>
+<ol>
+<li>Writes Python code using matplotlib to query the database and generate a chart</li>
+<li>Saves the chart as a PNG</li>
+<li>Returns the image</li>
+</ol>
+<p><picture><source type="image/avif" srcset="/img/cqtPgd7IMt-600.avif 600w"><source type="image/webp" srcset="/img/cqtPgd7IMt-600.webp 600w"><img alt="My AI agent shows me the sleeping chart." loading="lazy" decoding="async" style="max-width: 100%; height: auto;" src="/img/cqtPgd7IMt-600.png" width="600" height="1298"></picture></p>
+<h3 id="the-essence-of-agentic-ability" tabindex="-1">The essence of agentic ability <a class="header-anchor" href="#the-essence-of-agentic-ability">#</a></h3>
+<p>The experience crystallized a simple framework for thinking about AI agents:</p>
+<p><strong>Workflow approach</strong> (Version 1): You define the steps. The LLM fills in the blanks within each step. You are the architect, the model is the laborer.</p>
+<p><strong>Agent approach</strong> (Version 2): You define the capabilities. The LLM decides the steps. You provide the toolbox, the model is the architect.</p>
+<p>The irony still feels funny to me. The most agentic coding tool in the world, Claude Code, initially produced the most non-agentic code when I asked it to build an agent. I think that was on me though. It's because in my prompt, I asked it to &quot;build a baby tracker with tools for each activity type.&quot; I described a workflow. It built a workflow. The tool faithfully implemented my non-agentic design.</p>
+<p>The lesson: give the agent narrow, purpose-built tools, and you get a narrow, purpose-built system. Give it general-purpose capabilities and good documentation, and you get something that can handle anything you throw at it, including things you never anticipated.</p>
+<h3 id="is-software-dead" tabindex="-1">Is software dead? <a class="header-anchor" href="#is-software-dead">#</a></h3>
+<p>Building this agent made me think about the &quot;software is dead&quot; narrative that's been going around. The idea is that AI agents will replace traditional SaaS products. When Claude launched Cowork and made plugins available for industries like legal, the stock market dipped because people started doubting the future of SaaS. And honestly, my experience building this baby tracker is a data point in that direction. Huckleberry is a well-designed app with a team behind it, and I replaced its core functionality with a weekend project.</p>
+<p>I've seen this pattern in other areas of my life too. Last year when I moved to a new house, I chose Apple HomeKit over Home Assistant because I thought maintaining Home Assistant would be too time-consuming. If I were making that choice today, it would be a no-brainer. Home Assistant all the way. With tools like Claude Code, the &quot;maintenance burden&quot; of self-hosted, open-source software has dropped dramatically. The trade-off has shifted.</p>
+<p>But I don't think the story is that simple. There's one thing Huckleberry has that my agent doesn't: a data flywheel. Huckleberry has data from thousands of babies — their sleep patterns, their feeding schedules, their growth curves. They can train algorithms to predict the optimal nap time for your specific baby based on patterns from all the other babies in their dataset. My agent only has data from one baby. I can use an LLM as a common-sense sanity check (&quot;does this sleep schedule seem normal for a 2-month-old?&quot;), but that's not the same as a quantitative prediction model trained on real data from thousands of infants in this specific domain.</p>
+<p>So maybe software isn't dead, but the moat has moved. The moat is no longer the UI, the forms, the basic CRUD operations. Those are replaceable by agents. The moat is the data. The flywheel that no individual user can replicate on their own.</p>
+<h3 id="is-the-dashboard-dead" tabindex="-1">Is the dashboard dead? <a class="header-anchor" href="#is-the-dashboard-dead">#</a></h3>
+<p>I wrote about setting up my own <a href="https://bellowswang.github.io/blog/dashboard/metabase/">Metabase dashboards</a> as a core piece of my DNA department. Now that I have an agent that can generate any chart on demand via Telegram, do I still need them?</p>
+<p>This is actually a classic debate in data teams: curated dashboards vs. self-service ad-hoc analysis. After living with both, I think they serve fundamentally different modes.</p>
+<p><strong>Dashboards are for monitoring.</strong> You open Metabase and immediately see 5-10 metrics at a glance: total milk today, diaper count, sleep hours, feeding trend this week. Your eye catches the anomaly without asking a question. It's the single source of truth for your KPIs, rendered the same way every time, instantly, for free.</p>
+<p><strong>Chat is for investigation.</strong> &quot;What's the correlation between sleep duration and feeding volume this week?&quot; or &quot;Compare this week's feeding pattern to last week.&quot; These are questions you can't pre-build a dashboard for. The agent writes custom code, generates a one-off chart, and you ask follow-up questions. That flexibility is something no dashboard can match.</p>
+<p><picture><source type="image/avif" srcset="/img/Py-OemgxMr-600.avif 600w"><source type="image/webp" srcset="/img/Py-OemgxMr-600.webp 600w"><img alt="Chart made by my AI agent." loading="lazy" decoding="async" style="max-width: 100%; height: auto;" src="/img/Py-OemgxMr-600.jpeg" width="600" height="341"></picture></p>
+<p>The lines do blur though. You could persist the logic for generating a specific chart as an agent skill, so it produces the same stats the same way every time, which is functionally similar to a dashboard view. But each run still costs API tokens and has latency (the agent thinks, writes code, runs it), while Metabase loads instantly. For something you check five times a day, that difference matters.</p>
+<p>Where dashboards win: glanceability, zero latency, shared views the whole family can bookmark. Where chat wins: unlimited flexibility, follow-up questions, no maintenance when the schema changes. But both are <strong>pull</strong> interfaces, so you need to go to them. There's a third mode that neither does well: <strong>push.</strong> The agent comes to you. &quot;The baby slept 30% less than usual today.&quot; &quot;Feeding volume is trending down this week.&quot; A Telegram-based agent is naturally suited for this. It's already in your chat. As a next step, I'll explore how to make the agent more proactive and share with you in future.</p>
+<p>My current take: I'll probably shift most of my ad-hoc analysis to the chat interface and keep Metabase for the persistent, at-a-glance monitoring dashboard. The agent is better for exploring; the dashboard is better for watching.</p>
+<h3 id="my-dna-department-grows" tabindex="-1">My DNA department grows <a class="header-anchor" href="#my-dna-department-grows">#</a></h3>
+<p>My personal DNA department now has its first AI employee. It works the night shift. It speaks Chinese and English. It's a generalist, being so agentic that it doesn't need a dedicated script for learning a new tool — you just update the documentation and it figures out the rest by itself. What's the next agent the department might have? Stay tuned.</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/blog/running/">How I logged and analyzed my running data to track progress in 2024</a></li>
+</ul>
+
+		</main>
+
+		<footer></footer>
+
+		<!-- Current page: /blog/baby-agent/ -->
+	</body>
+</html>
