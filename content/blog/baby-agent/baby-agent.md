@@ -8,7 +8,6 @@ tags:
   - postgres
   - baby
   - metabase
-draft: true
 ---
 Two things happened to me at the end of 2025. I became a proud father. And I switched to a new team at work and started working on building AI agents. Naturally, I wanted to combine both into one side project, not only making my life easier as a father (hopefully), but also helping me learn more about building AI agents.
 
