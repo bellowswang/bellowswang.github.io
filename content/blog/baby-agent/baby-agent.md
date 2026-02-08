@@ -17,7 +17,7 @@ Of course, there are apps for this. I tried Huckleberry, which is one of the mos
 
 So I decided to build an AI agent that my whole family could use, which is a Telegram bot where anyone could send a natural language message and have it logged into a PostgreSQL database automatically (remember I set up a database for my DNA Department in a previous <a href="https://bellowswang.github.io/blog/database/">post</a>?). No forms, no dropdowns, no app to learn. Just text what happened, in Chinese or English, and the agent handles the rest.
 
-{% image "IMG_6211.png", "My AI agent for baby tracking." %}
+{% image "IMG_6211.PNG", "My AI agent for baby tracking." %}
 
 ### The project: a Telegram bot baby tracker
 
@@ -99,7 +99,7 @@ When a user asks "show me a chart of feeding patterns this week", the agent does
 2. Saves the chart as a PNG
 3. Returns the image
 
-{% image "IMG_6212.png", "My AI agent shows me the sleeping chart." %}
+{% image "IMG_6212.PNG", "My AI agent shows me the sleeping chart." %}
 
 ### The essence of agentic ability
 
