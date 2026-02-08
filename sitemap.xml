@@ -52,6 +52,11 @@
 	</url>
 	
 	<url>
+		<loc>https://bellowswang.github.io/tags/another-tag/</loc>
+		<lastmod>2026-02-08</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://bellowswang.github.io/tags/agent/</loc>
 		<lastmod>2026-02-08</lastmod>
 	</url>
@@ -73,31 +78,6 @@
 	
 	<url>
 		<loc>https://bellowswang.github.io/tags/metabase/</loc>
-		<lastmod>2026-02-08</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://bellowswang.github.io/tags/database/</loc>
-		<lastmod>2026-02-08</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://bellowswang.github.io/tags/mongodb/</loc>
-		<lastmod>2026-02-08</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://bellowswang.github.io/tags/docker/</loc>
-		<lastmod>2026-02-08</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://bellowswang.github.io/tags/vectordb/</loc>
-		<lastmod>2026-02-08</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://bellowswang.github.io/tags/another-tag/</loc>
 		<lastmod>2026-02-08</lastmod>
 	</url>
 	
@@ -133,6 +113,26 @@
 	
 	<url>
 		<loc>https://bellowswang.github.io/tags/second-tag/</loc>
+		<lastmod>2026-02-08</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://bellowswang.github.io/tags/database/</loc>
+		<lastmod>2026-02-08</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://bellowswang.github.io/tags/mongodb/</loc>
+		<lastmod>2026-02-08</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://bellowswang.github.io/tags/docker/</loc>
+		<lastmod>2026-02-08</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://bellowswang.github.io/tags/vectordb/</loc>
 		<lastmod>2026-02-08</lastmod>
 	</url>
 	
